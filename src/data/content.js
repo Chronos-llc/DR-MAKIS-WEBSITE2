@@ -22,7 +22,8 @@
     profileTitle: 'Dr. William Makis, MD',
     profileSubtitle: 'Nuclear Medicine Physician & Oncologist',
     profileHighlight: '500+ Research Publications',
-    backgroundImage: 'https://i.postimg.cc/HLmNLbWW/Screenshot-20260303-150533-X.jpg',
+    backgroundImage: '/hero-oncology-aurora.svg',
+    previousBackgroundImage: 'https://i.postimg.cc/HLmNLbWW/Screenshot-20260303-150533-X.jpg',
     stats: [
       {
         label: 'Patients Treated',
