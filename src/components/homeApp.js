@@ -382,7 +382,7 @@ function renderMainLayout(content) {
           </div>
           <aside class="hero-visual-card" aria-label="Precision oncology highlights">
             <span class="hero-visual-eyebrow">Precision dashboard</span>
-            <strong>Personalized protocols, evidence-led care</strong>
+            <strong>Personalized protocols, evidence-based care</strong>
             <div class="hero-signal-grid" aria-hidden="true">
               <span></span><span></span><span></span><span></span>
             </div>
