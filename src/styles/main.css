@@ -4445,3 +4445,245 @@ input {
     margin-right: 34px;
   }
 }
+
+/* Elevated modal composition */
+.detail-modal-panel,
+.consultation-modal-panel {
+  isolation: isolate;
+}
+
+.detail-modal-panel::before,
+.consultation-modal-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 180px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(15, 157, 146, 0.14), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
+  z-index: -1;
+}
+
+.modal-media-wrap,
+.modal-product-media,
+.consultation-modal-hero {
+  border-radius: clamp(18px, 2.4vw, 26px);
+  margin: clamp(10px, 1.8vw, 16px) clamp(10px, 1.8vw, 16px) 0;
+  border: 1px solid rgba(214, 228, 233, 0.92);
+  background: linear-gradient(145deg, #e9f8f5 0%, #f7fbfd 100%);
+}
+
+.modal-media-wrap:not(.modal-media-wrap--protocol) .pill-tag,
+.modal-media-wrap--protocol .pill-tag {
+  position: absolute;
+  left: clamp(14px, 2vw, 20px);
+  bottom: clamp(14px, 2vw, 20px);
+  z-index: 2;
+  box-shadow: 0 12px 24px rgba(8, 30, 42, 0.14);
+}
+
+.modal-media-wrap:not(.modal-media-wrap--protocol) {
+  position: relative;
+}
+
+.modal-media-wrap:not(.modal-media-wrap--protocol)::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 46%;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(5, 28, 38, 0.12));
+}
+
+.modal-hero,
+.consultation-modal-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.modal-body--detail {
+  gap: clamp(14px, 2.2vw, 22px);
+}
+
+.modal-body--detail > h2 + .protocol-subtitle,
+.modal-body--detail > h2 + .modal-subtitle {
+  margin-top: calc(clamp(14px, 2.2vw, 22px) * -0.55);
+}
+
+.modal-body--detail > p:not([class]),
+.modal-intro-card > p:not([class]),
+.modal-product-body > p:not([class]) {
+  color: #40586a;
+  font-size: clamp(1rem, 1.8vw, 1.08rem);
+  line-height: 1.68;
+}
+
+.modal-body--detail > h3 {
+  padding-top: 4px;
+}
+
+.modal-body--detail .meta-row,
+.modal-meta {
+  margin: 0;
+  padding: clamp(12px, 2vw, 16px);
+  border: 1px solid rgba(211, 225, 231, 0.95);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbfa 100%);
+  box-shadow: 0 10px 24px rgba(8, 30, 42, 0.05);
+}
+
+.modal-body--detail .meta-row {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modal-body--detail .meta-row span,
+.consultation-meta-row {
+  min-height: 44px;
+  padding: 9px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.metrics-row {
+  gap: clamp(10px, 2vw, 14px);
+}
+
+.modal-body--detail .metric-tile,
+.protocol-stats .stat-item {
+  border: 1px solid rgba(211, 225, 231, 0.92);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 24px rgba(8, 30, 42, 0.05);
+}
+
+.modal-body--detail .check-list {
+  margin: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.modal-body--detail .check-list li {
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(211, 225, 231, 0.92);
+  border-radius: 15px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbfa 100%);
+  font-weight: 700;
+}
+
+.modal-body--detail > .btn + .btn,
+.modal-body--detail > .btn + a.btn {
+  margin-top: -8px;
+}
+
+.modal-product-layout {
+  gap: 0;
+  padding: clamp(10px, 1.8vw, 16px);
+}
+
+.modal-product-layout .modal-product-media {
+  margin: 0;
+}
+
+.modal-product-body {
+  padding: clamp(24px, 4.2vw, 42px);
+}
+
+.modal-product-body .rating-line {
+  margin-top: -8px;
+}
+
+.modal-product-body .trust-row {
+  gap: 10px;
+}
+
+.modal-intro-card {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(15, 157, 146, 0.10), transparent 36%),
+    rgba(255, 255, 255, 0.9);
+}
+
+.modal-purchase-card .btn,
+.modal-body--detail > .btn,
+.modal-body--detail > a.btn,
+.modal-product-body > .btn {
+  min-height: 52px;
+}
+
+.consultation-modal-panel .modal-header {
+  margin: 0 34px clamp(18px, 3vw, 26px);
+  padding-top: 4px;
+}
+
+.consultation-modal-panel .modal-header h2 {
+  margin: 0;
+}
+
+.consultation-modal-panel .modal-header .modal-subtitle {
+  margin: 0 auto;
+}
+
+.consultation-form {
+  padding: clamp(16px, 3vw, 22px);
+  border: 1px solid rgba(211, 225, 231, 0.95);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 28px rgba(8, 30, 42, 0.06);
+}
+
+.consultation-form .form-group {
+  gap: 7px;
+}
+
+.consultation-form .form-actions {
+  margin-top: 2px;
+}
+
+.consultation-form textarea {
+  resize: vertical;
+}
+
+@media (max-width: 860px) {
+  .modal-product-layout {
+    padding: clamp(10px, 2vw, 14px);
+  }
+
+  .modal-product-layout .modal-product-media {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 620px) {
+  .modal-media-wrap,
+  .modal-product-media,
+  .consultation-modal-hero {
+    margin: 8px 8px 0;
+    border-radius: 18px;
+  }
+
+  .modal-hero,
+  .consultation-modal-image {
+    height: clamp(190px, 54vw, 250px);
+  }
+
+  .modal-body--detail .check-list,
+  .modal-body--detail .metrics-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-body--detail .meta-row,
+  .modal-meta {
+    padding: 10px;
+  }
+
+  .consultation-modal-panel {
+    padding: 16px 12px 12px;
+  }
+
+  .consultation-form {
+    padding: 14px;
+    border-radius: 18px;
+  }
+}
