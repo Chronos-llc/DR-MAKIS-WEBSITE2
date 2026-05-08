@@ -813,33 +813,36 @@ export function mountHomeApp(root, content) {
   function productModalTemplate(product) {
     return `
       <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon('close')}</button>
-      <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="modal-hero" />
-      <div class="modal-body">
-        <h2>${escapeHtml(product.name)}</h2>
-        <p class="rating-line">${renderStars(product.rating)} (${escapeHtml(product.reviews)} reviews)</p>
-        <p class="modal-price">${formatMoney(product.price)}</p>
-        <p>${escapeHtml(product.description)}</p>
-
-        <h3>Key Benefits</h3>
-        <ul class="check-list">
-          ${product.benefits.map((benefit) => `<li>${icon('check')}<span>${escapeHtml(benefit)}</span></li>`).join('')}
-        </ul>
-
-        <div class="meta-card">
-          <p><strong>Dosage:</strong><br />${escapeHtml(product.dosage)}</p>
-          <p><strong>Ingredients:</strong><br />${escapeHtml(product.ingredients)}</p>
-          <p><strong>Size:</strong><br />${escapeHtml(product.size)}</p>
+      <div class="modal-product-layout">
+        <div class="modal-product-media">
+          <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="modal-product-image" />
         </div>
+        <div class="modal-body modal-product-body">
+          <span class="modal-card-eyebrow">Supplement detail</span>
+          <h2>${escapeHtml(product.name)}</h2>
+          <p class="rating-line">${renderStars(product.rating)} (${escapeHtml(product.reviews)} reviews)</p>
+          <p class="modal-price">${formatMoney(product.price)}</p>
+          <p>${escapeHtml(product.description)}</p>
 
-        <div class="trust-row">
-          <span>${icon('box')}Quality Tested</span>
-          <span>${icon('shield')}Safe & Secure</span>
-          <span>${icon('truck')}Fast Shipping</span>
+          <h3>Key Benefits</h3>
+          <ul class="check-list">
+            ${product.benefits.map((benefit) => `<li>${icon('check')}<span>${escapeHtml(benefit)}</span></li>`).join('')}
+          </ul>
+
+          <div class="meta-card">
+            <p><strong>Dosage:</strong><br />${escapeHtml(product.dosage)}</p>
+            <p><strong>Ingredients:</strong><br />${escapeHtml(product.ingredients)}</p>
+            <p><strong>Size:</strong><br />${escapeHtml(product.size)}</p>
+          </div>
+
+          <div class="trust-row">
+            <span>${icon('box')}Quality Tested</span>
+            <span>${icon('shield')}Safe & Secure</span>
+            <span>${icon('truck')}Fast Shipping</span>
+          </div>
+
+          <button class="btn btn-cart block" type="button" data-add-product-cart="${escapeHtml(product.id)}">${icon('cart')}Add to Cart</button>
         </div>
-
-        <button class="btn btn-cart block" type="button" data-add-product-cart="${escapeHtml(product.id)}">${icon(
-      'cart'
-    )}Add to Cart - ${formatMoney(product.price)}</button>
       </div>
     `
   }

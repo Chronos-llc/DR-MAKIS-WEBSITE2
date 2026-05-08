@@ -418,20 +418,25 @@ function renderSupplementsLayout(content) {
 function productModalTemplate(product) {
   return `
     <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon('close')}</button>
-    <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="modal-hero" />
-    <div class="modal-body">
-      <h2>${escapeHtml(product.name)}</h2>
-      ${ratingTemplate(product.id)}
-      <p class="modal-price">${formatMoney(product.price)}</p>
-      <p>${escapeHtml(product.description)}</p>
-
-      <div class="trust-row">
-        <span>${icon('box')}Quality Tested</span>
-        <span>${icon('shield')}Safe & Secure</span>
-        <span>${icon('truck')}Fast Shipping</span>
+    <div class="modal-product-layout">
+      <div class="modal-product-media">
+        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="modal-product-image" />
       </div>
+      <div class="modal-body modal-product-body">
+        <span class="modal-card-eyebrow">Supplement detail</span>
+        <h2>${escapeHtml(product.name)}</h2>
+        ${ratingTemplate(product.id)}
+        <p class="modal-price">${formatMoney(product.price)}</p>
+        <p>${escapeHtml(product.description)}</p>
 
-      <button class="btn btn-cart block" type="button" data-add-product-cart="${escapeHtml(product.id)}">${icon('cart')}Add to Cart - ${formatMoney(product.price)}</button>
+        <div class="trust-row">
+          <span>${icon('box')}Quality Tested</span>
+          <span>${icon('shield')}Safe & Secure</span>
+          <span>${icon('truck')}Fast Shipping</span>
+        </div>
+
+        <button class="btn btn-cart block" type="button" data-add-product-cart="${escapeHtml(product.id)}">${icon('cart')}Add to Cart</button>
+      </div>
     </div>
   `
 }
