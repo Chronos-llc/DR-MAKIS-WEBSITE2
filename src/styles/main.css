@@ -1773,6 +1773,49 @@ input {
   line-height: 1.2;
 }
 
+.telegram-update-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #168ac5;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(34, 158, 217, 0.48);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(34, 158, 217, 0.12);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.telegram-update-cta:hover,
+.telegram-update-cta:focus-visible {
+  color: #0b78ae;
+  background: #eef9ff;
+  border-color: rgba(34, 158, 217, 0.72);
+  transform: translateY(-1px);
+}
+
+.telegram-update-cta .icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.telegram-update-cta--drawer {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 2px;
+  padding: 11px 14px;
+  border-radius: 15px;
+}
+
+.telegram-update-cta--footer {
+  margin: -12px 0 28px;
+  padding: 10px 16px;
+}
+
 .side-drawer nav a {
   border-radius: 10px;
   padding: 10px 12px;
@@ -2895,6 +2938,11 @@ input {
   .site-header,
   .site-footer {
     overflow-x: clip;
+  }
+
+  .telegram-update-cta--footer {
+    width: 100%;
+    margin: -10px 0 24px;
   }
 
   .telegram-float {
