@@ -159,7 +159,7 @@
         'Oncoplastic Surgery Pathway',
       ],
       price: 500,
-      image: '/assets/images/programs/breast-cancer.svg',
+      image: 'https://i.postimg.cc/bJnryX37/360-F-1693923845-5Cp-TDSP0vqo-U5Jy-WAQ2G06Pnvj-XPc-Ii-V.jpg',
     },
     {
       id: 'lung-cancer',
@@ -186,7 +186,7 @@
         'Liquid Biopsy Monitoring',
       ],
       price: 500,
-      image: '/assets/images/programs/lung-cancer.svg',
+      image: 'https://i.postimg.cc/Xq3jnrZk/images.jpg',
     },
     {
       id: 'colorectal-cancer',
@@ -213,7 +213,7 @@
         'Liver Metastasis Treatment',
       ],
       price: 500,
-      image: '/assets/images/programs/colorectal-cancer.svg',
+      image: 'https://i.postimg.cc/d30fRFgq/oandasan-access-to-what.jpg',
     },
     {
       id: 'prostate-cancer',
@@ -240,7 +240,7 @@
         'PSMA-Targeted Therapy',
       ],
       price: 500,
-      image: '/assets/images/programs/prostate-cancer.svg',
+      image: 'https://i.postimg.cc/65v0kTrM/78ffb81ad0e9abafa494e65c8edd2d14.jpg',
     },
     {
       id: 'skin-cancer',
@@ -267,7 +267,7 @@
         'Targeted Therapy (BRAF)',
       ],
       price: 500,
-      image: '/assets/images/programs/skin-cancer.svg',
+      image: 'https://i.postimg.cc/cHPD337w/734677.jpg',
     },
     {
       id: 'blood-cancers',
@@ -294,7 +294,7 @@
         'Clinical Trials',
       ],
       price: 500,
-      image: '/assets/images/programs/blood-cancers.svg',
+      image: 'https://i.postimg.cc/8chbr0P2/54b171d23b6a3e0afd307c000de91615-78680c5367.webp',
     },
   ],
   processSection: {
