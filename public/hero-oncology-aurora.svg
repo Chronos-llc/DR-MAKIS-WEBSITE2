@@ -1,0 +1,74 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Precision oncology aurora background</title>
+  <desc id="desc">Abstract teal and navy medical background with cellular constellations, diagnostic light beams, and warm clinical highlights.</desc>
+  <defs>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1435 314) rotate(137) scale(821 540)">
+      <stop stop-color="#35E8D2" stop-opacity="0.86"/>
+      <stop offset="0.43" stop-color="#0F9D92" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#071827" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(384 780) rotate(-25) scale(724 416)">
+      <stop stop-color="#F4B321" stop-opacity="0.62"/>
+      <stop offset="0.46" stop-color="#0F9D92" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#081A2B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mesh" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FBFA"/>
+      <stop offset="0.38" stop-color="#DDF3F0"/>
+      <stop offset="0.68" stop-color="#A8DDD5"/>
+      <stop offset="1" stop-color="#12324A"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="375" y1="1000" x2="1530" y2="95" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.42" stop-color="#FFFFFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#35E8D2" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="38"/>
+    </filter>
+    <pattern id="grid" width="92" height="92" patternUnits="userSpaceOnUse">
+      <path d="M92 0H0V92" stroke="#0B7F76" stroke-opacity="0.08" stroke-width="1"/>
+      <circle cx="0" cy="0" r="2" fill="#0B7F76" fill-opacity="0.16"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#mesh)"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <rect width="1920" height="1080" fill="url(#glowA)"/>
+  <rect width="1920" height="1080" fill="url(#glowB)"/>
+  <g filter="url(#blur)" opacity="0.72">
+    <ellipse cx="1385" cy="380" rx="248" ry="142" fill="#FFFFFF" fill-opacity="0.65"/>
+    <ellipse cx="1515" cy="608" rx="235" ry="160" fill="#16B9AB" fill-opacity="0.34"/>
+    <ellipse cx="876" cy="208" rx="330" ry="118" fill="#FFFFFF" fill-opacity="0.32"/>
+  </g>
+  <path d="M-86 924C220 706 433 737 690 571C907 431 1021 227 1264 191C1454 162 1626 246 1988 -18" stroke="url(#beam)" stroke-width="154" stroke-linecap="round" opacity="0.58"/>
+  <path d="M-56 784C194 688 354 686 548 594C832 459 892 247 1174 181C1418 124 1600 204 1938 58" stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="3"/>
+  <path d="M-20 860C222 732 396 730 612 610C870 468 976 294 1216 238C1442 185 1640 250 1930 116" stroke="#0B7F76" stroke-opacity="0.24" stroke-width="5"/>
+  <g opacity="0.58">
+    <path d="M1294 306L1416 242L1542 318L1532 466L1398 528L1278 452L1294 306Z" stroke="#0B7F76" stroke-opacity="0.46" stroke-width="3"/>
+    <path d="M1398 528L1510 664L1662 622L1722 476L1532 466" stroke="#0B7F76" stroke-opacity="0.34" stroke-width="3"/>
+    <path d="M1416 242L1510 140L1660 196L1542 318" stroke="#0B7F76" stroke-opacity="0.28" stroke-width="3"/>
+    <circle cx="1294" cy="306" r="12" fill="#F4B321"/>
+    <circle cx="1416" cy="242" r="10" fill="#0F9D92"/>
+    <circle cx="1542" cy="318" r="14" fill="#FFFFFF" fill-opacity="0.86"/>
+    <circle cx="1532" cy="466" r="11" fill="#0F9D92"/>
+    <circle cx="1398" cy="528" r="15" fill="#FFFFFF" fill-opacity="0.78"/>
+    <circle cx="1510" cy="664" r="10" fill="#F4B321"/>
+    <circle cx="1662" cy="622" r="12" fill="#0F9D92"/>
+    <circle cx="1722" cy="476" r="8" fill="#FFFFFF" fill-opacity="0.84"/>
+    <circle cx="1510" cy="140" r="9" fill="#F4B321"/>
+    <circle cx="1660" cy="196" r="10" fill="#0F9D92"/>
+  </g>
+  <g opacity="0.45">
+    <circle cx="1070" cy="738" r="132" stroke="#FFFFFF" stroke-opacity="0.44" stroke-width="2"/>
+    <circle cx="1070" cy="738" r="76" stroke="#0B7F76" stroke-opacity="0.35" stroke-width="3"/>
+    <path d="M972 738H1168M1070 640V836" stroke="#FFFFFF" stroke-opacity="0.38" stroke-width="2"/>
+  </g>
+  <g opacity="0.35">
+    <circle cx="310" cy="248" r="5" fill="#0B7F76"/>
+    <circle cx="412" cy="212" r="7" fill="#F4B321"/>
+    <circle cx="530" cy="300" r="4" fill="#0B7F76"/>
+    <circle cx="626" cy="222" r="6" fill="#FFFFFF"/>
+    <path d="M310 248L412 212L530 300L626 222" stroke="#0B7F76" stroke-width="2"/>
+  </g>
+  <rect width="1920" height="1080" fill="url(#glowA)" opacity="0.38"/>
+</svg>

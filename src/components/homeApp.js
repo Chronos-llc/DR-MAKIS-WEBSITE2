@@ -367,7 +367,8 @@ function renderMainLayout(content) {
 
       <main id="top">
         <section class="hero-section section-panel content-shell" id="home">
-          <img src="${escapeHtml(hero.backgroundImage)}" alt="Dr. Makis hero placeholder" class="hero-bg" />
+          <img src="${escapeHtml(hero.backgroundImage)}" alt="Abstract precision oncology background" class="hero-bg" />
+          <div class="hero-overlay" aria-hidden="true"></div>
           <div class="hero-content">
             <span class="section-pill">${escapeHtml(hero.badge)}</span>
             <h1>${escapeHtml(hero.title)}</h1>
@@ -379,6 +380,18 @@ function renderMainLayout(content) {
             <div class="hero-metrics">${metricsTemplate(hero.stats.slice(0, 3))}</div>
             ${heroProfileTemplate(hero)}
           </div>
+          <aside class="hero-visual-card" aria-label="Precision oncology highlights">
+            <span class="hero-visual-eyebrow">Precision dashboard</span>
+            <strong>Personalized protocols, evidence-based care</strong>
+            <div class="hero-signal-grid" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <ul>
+              <li>${icon('check')} Advanced diagnostics review</li>
+              <li>${icon('check')} Research-backed treatment planning</li>
+              <li>${icon('check')} Secure remote consultation pathway</li>
+            </ul>
+          </aside>
         </section>
 
         <section class="section-panel content-shell" id="shop">
