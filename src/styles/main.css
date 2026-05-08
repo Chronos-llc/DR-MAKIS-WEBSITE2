@@ -1797,9 +1797,15 @@ input {
 }
 
 .telegram-update-cta .icon {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   flex: 0 0 auto;
+  box-sizing: border-box;
+  padding: 6px;
+  color: #ffffff;
+  background: #3aa7e7;
+  border-radius: 999px;
+  box-shadow: 0 6px 12px rgba(34, 158, 217, 0.18);
 }
 
 .telegram-update-cta--drawer {
@@ -3842,7 +3848,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-min-height: 280px;
+  min-height: 280px;
   padding: 0;
   background: linear-gradient(120deg, #26cbe2 0%, #13b9d5 48%, #0ea5be 100%);
   border-bottom: 1px solid #8dd8e4;

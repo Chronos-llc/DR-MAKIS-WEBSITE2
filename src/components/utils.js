@@ -184,9 +184,8 @@ export function setupFloatingTelegramButton(contact = {}) {
     button.href = telegramUrl
     button.setAttribute('aria-label', `Message ${telegramHandle} on Telegram`)
     button.innerHTML = `
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 3 3.7 10.2c-1 .4-1 1.8 0 2.2l4.2 1.5 1.5 4.2c.4 1 1.8 1 2.2 0L21 3z"></path>
-        <path d="M8 13.8 21 3"></path>
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+        <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19l-9.47 5.96-4.1-1.3c-.88-.28-.89-.86.2-1.3l15.98-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.85.42z"></path>
       </svg>
       <span class="floating-telegram-ping" aria-hidden="true"></span>
     `
