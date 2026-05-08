@@ -3842,9 +3842,18 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 28px 20px;
+min-height: 280px;
+  padding: 0;
   background: linear-gradient(120deg, #26cbe2 0%, #13b9d5 48%, #0ea5be 100%);
   border-bottom: 1px solid #8dd8e4;
+  overflow: hidden;
+}
+
+.consultation-modal-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
 }
 
 .supplement-image-placeholder {
