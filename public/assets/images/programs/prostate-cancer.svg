@@ -1,0 +1,59 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Prostate Cancer modal illustration</title>
+  <desc id="desc">Premium abstract clinical illustration for the prostate cancer consultation modal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="100" y1="40" x2="1080" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FFFD"/>
+      <stop offset="0.52" stop-color="#EAF8F6"/>
+      <stop offset="1" stop-color="#EEF7FB"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="310" y1="170" x2="890" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#1d4ed8" stop-opacity="0.95"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 424) rotate(90) scale(360 450)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.98"/>
+      <stop offset="0.56" stop-color="#FFFFFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="170" y="110" width="860" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="36" stdDeviation="34" flood-color="#08212C" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" rx="56" fill="url(#bg)"/>
+  <circle cx="151" cy="132" r="130" fill="#60a5fa" fill-opacity="0.12"/>
+  <circle cx="1040" cy="158" r="178" fill="#1d4ed8" fill-opacity="0.10"/>
+  <circle cx="989" cy="759" r="192" fill="#60a5fa" fill-opacity="0.08"/>
+  <path d="M104 688C252 588 394 624 530 691C680 765 802 776 1096 646" stroke="#0F3B3F" stroke-opacity="0.08" stroke-width="34" stroke-linecap="round"/>
+  <path d="M123 737C306 638 454 681 603 742C740 798 872 810 1085 716" stroke="#0F9D92" stroke-opacity="0.12" stroke-width="18" stroke-linecap="round"/>
+  <g filter="url(#shadow)">
+    <rect x="260" y="150" width="680" height="580" rx="44" fill="#FFFFFF" fill-opacity="0.84"/>
+    <rect x="286" y="176" width="628" height="528" rx="34" stroke="#D8E8EB" stroke-width="2"/>
+  </g>
+  <circle cx="600" cy="424" r="316" fill="url(#halo)"/>
+  <g transform="translate(363 218)">
+    <rect x="0" y="0" width="474" height="330" rx="38" fill="url(#accent)" fill-opacity="0.12"/>
+    <path d="M238 62C326 62 398 134 398 222C398 246 392 269 382 289H94C84 269 78 246 78 222C78 134 150 62 238 62Z" fill="#FFFFFF" fill-opacity="0.82"/>
+    <path d="M237 83C184 130 156 180 156 236C156 261 164 281 181 296H292C310 280 319 258 319 232C319 179 291 129 237 83Z" fill="url(#accent)" fill-opacity="0.9"/>
+    <path d="M237 115V293" stroke="#FFFFFF" stroke-opacity="0.74" stroke-width="12" stroke-linecap="round"/>
+    <path d="M194 166C214 172 229 183 238 198C249 181 264 168 284 160" stroke="#FFFFFF" stroke-opacity="0.72" stroke-width="12" stroke-linecap="round"/>
+    <path d="M186 226C208 232 226 244 238 262C250 240 270 225 298 217" stroke="#FFFFFF" stroke-opacity="0.72" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="118" cy="102" r="28" fill="#FFFFFF" fill-opacity="0.78"/>
+    <circle cx="367" cy="105" r="20" fill="#FFFFFF" fill-opacity="0.66"/>
+    <circle cx="386" cy="274" r="16" fill="#FFFFFF" fill-opacity="0.62"/>
+  </g>
+  <g transform="translate(318 598)">
+    <rect x="0" y="0" width="564" height="84" rx="24" fill="#FFFFFF" fill-opacity="0.86"/>
+    <rect x="24" y="23" width="38" height="38" rx="12" fill="url(#accent)" fill-opacity="0.92"/>
+    <rect x="82" y="24" width="198" height="14" rx="7" fill="#143846" fill-opacity="0.82"/>
+    <rect x="82" y="48" width="306" height="11" rx="5.5" fill="#5F7785" fill-opacity="0.55"/>
+    <rect x="410" y="23" width="128" height="38" rx="19" fill="#1d4ed8" fill-opacity="0.12"/>
+    <text x="474" y="48" text-anchor="middle" fill="#0F3B3F" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800">Precision medicine</text>
+  </g>
+  <g opacity="0.55">
+    <circle cx="356" cy="209" r="8" fill="#60a5fa"/>
+    <circle cx="873" cy="284" r="7" fill="#1d4ed8"/>
+    <circle cx="250" cy="530" r="6" fill="#1d4ed8"/>
+    <circle cx="943" cy="594" r="9" fill="#60a5fa"/>
+  </g>
+</svg>
