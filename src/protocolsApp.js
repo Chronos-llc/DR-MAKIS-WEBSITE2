@@ -48,6 +48,18 @@ const FOOTER_SECTION_MAP = {
   },
 }
 
+
+const TELEGRAM_UPDATE_URL = 'https://t.me/drmakishealthtalk'
+const TELEGRAM_UPDATE_LABEL = 'Ivermectin Update'
+
+function telegramUpdateCtaTemplate(className = '', includeNavLink = false) {
+  const classes = ['telegram-update-cta', className].filter(Boolean).join(' ')
+  const navLinkAttribute = includeNavLink ? ' data-nav-link' : ''
+  return `<a class="${classes}" href="${TELEGRAM_UPDATE_URL}" target="_blank" rel="noopener noreferrer"${navLinkAttribute}>${icon(
+    'telegram'
+  )}<span>${escapeHtml(TELEGRAM_UPDATE_LABEL)}</span></a>`
+}
+
 function footerListTemplate(items, group, hrefPrefix = '/') {
   const sectionMap = FOOTER_SECTION_MAP[group] || {}
   return items
@@ -136,6 +148,7 @@ function mobileQuickActionsTemplate() {
       <button class="btn btn-primary btn-mobile-drawer book-consultation" aria-label="Book a consultation" data-open-consultation>
         Book Consultation
       </button>
+      ${telegramUpdateCtaTemplate('telegram-update-cta--drawer btn-mobile-drawer', true)}
     </div>
   `
 }
@@ -234,6 +247,7 @@ function renderProtocolsLayout(content) {
           <a class="icon-button ghost" href="/#contact" aria-label="LinkedIn">${icon('linkedin')}</a>
           <a class="icon-button ghost" href="/#contact" aria-label="Instagram">${icon('instagram')}</a>
         </div>
+        ${telegramUpdateCtaTemplate('telegram-update-cta--footer')}
 
         <div class="footer-columns">
           <div>
