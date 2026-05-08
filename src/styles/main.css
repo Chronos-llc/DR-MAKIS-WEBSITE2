@@ -3842,7 +3842,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 280px;
+min-height: 280px;
   padding: 0;
   background: linear-gradient(120deg, #26cbe2 0%, #13b9d5 48%, #0ea5be 100%);
   border-bottom: 1px solid #8dd8e4;
