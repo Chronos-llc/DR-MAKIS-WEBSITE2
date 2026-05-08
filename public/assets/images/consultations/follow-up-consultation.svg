@@ -1,0 +1,22 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Follow-Up Consultation</title>
+  <desc id="desc">Generated consultation image asset for Follow-Up Consultation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1982c4"/>
+      <stop offset="1" stop-color="#5ed1ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 360) rotate(90) scale(360 520)">
+      <stop stop-color="#ffffff" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" rx="0" fill="url(#bg)"/>
+  <circle cx="178" cy="142" r="92" fill="#ffffff" opacity="0.14"/>
+  <circle cx="1028" cy="652" r="142" fill="#ffffff" opacity="0.14"/>
+  <path d="M90 610C254 502 388 560 525 628C682 706 852 706 1110 540" stroke="#ffffff" stroke-opacity="0.18" stroke-width="42" stroke-linecap="round"/>
+  <rect x="300" y="130" width="600" height="540" rx="52" fill="url(#glow)" stroke="#ffffff" stroke-opacity="0.22" stroke-width="4"/>
+  <circle cx="600" cy="380" r="152" fill="#ffffff" opacity="0.95"/><path d="M687 304c-47-45-122-43-166 5-37 40-42 99-15 144" stroke="#0f3b5f" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M508 284v82h82" stroke="#0f3b5f" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M513 456c47 45 122 43 166-5 37-40 42-99 15-144" stroke="#14b8a6" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M692 476v-82h-82" stroke="#14b8a6" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="600" y="636" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800">Follow-Up Consultation</text>
+  <text x="600" y="692" text-anchor="middle" fill="#eaffff" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600" opacity="0.92">Progress review</text>
+</svg>

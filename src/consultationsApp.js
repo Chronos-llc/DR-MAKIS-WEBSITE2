@@ -47,7 +47,7 @@ const FOOTER_SECTION_MAP = {
 }
 
 
-const TELEGRAM_UPDATE_URL = 'https://t.me/drmakishealthtalk'
+const TELEGRAM_UPDATE_URL = 'https://t.me/drmakiscancerprotocols'
 const TELEGRAM_UPDATE_LABEL = 'Ivermectin Update'
 
 function telegramUpdateCtaTemplate(className = '', includeNavLink = false) {
@@ -153,12 +153,18 @@ function mobileQuickActionsTemplate() {
 
 function consultationModalTemplate(consultation) {
   const cardIcon = consultation.icon || 'calendar'
+  const heroMedia = consultation.image
+    ? `<img class="consultation-modal-image" src="${escapeHtml(consultation.image)}" alt="${escapeHtml(
+        consultation.title
+      )}" />`
+    : `<span class="consultation-icon-box large">${icon(cardIcon)}</span>`
+
   return `
     <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon(
       'close'
     )}</button>
     <div class="consultation-modal-hero">
-      <span class="consultation-icon-box large">${icon(cardIcon)}</span>
+      ${heroMedia}
     </div>
     <div class="modal-body">
       <h2>${escapeHtml(consultation.title)}</h2>

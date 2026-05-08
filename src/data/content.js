@@ -7,8 +7,8 @@
   },
   contact: {
     email: 'drmakis@zohomail.com',
-    telegramHandle: '@reach_dr_makis',
-    telegramUrl: 'https://t.me/reach_dr_makis',
+    telegramHandle: '@consult_dr_makis',
+    telegramUrl: 'https://t.me/consult_dr_makis',
     addressLines: ['Dr. William Makis Cancer Center', '1234 Medical Drive, Suite 500', 'Boston, MA 02115'],
     phone: '1-800-WILLIAM-MAKIS',
   },
@@ -1042,7 +1042,7 @@
       delivery: 'Video Call',
       price: 650,
       popular: true,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/consultations/initial-consultation.svg',
     },
     {
       id: 'follow-up-consultation',
@@ -1056,7 +1056,7 @@
       delivery: 'Video Call',
       price: 460,
       popular: false,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/consultations/follow-up-consultation.svg',
     },
     {
       id: 'protocol-review',
@@ -1071,7 +1071,7 @@
       delivery: 'Video Call + Written Report',
       price: 500,
       popular: true,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/consultations/protocol-review.svg',
     },
     {
       id: 'supplement-selection-consultation',
@@ -1085,7 +1085,7 @@
       delivery: 'Video Call',
       price: 590,
       popular: false,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/consultations/supplement-selection-consultation.svg',
     },
     {
       id: 'extended-consultation-package',
@@ -1102,7 +1102,7 @@
       originalPrice: 8400,
       saveNote: 'Save $3,900.00',
       popular: true,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/consultations/extended-consultation-package.svg',
     },
   ],
   protocolsPage: {
