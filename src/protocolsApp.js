@@ -389,29 +389,48 @@ function renderProtocolsLayout(content) {
 }
 
 function protocolModalTemplate(protocol) {
+  const difficultyClass = protocol.difficulty.toLowerCase()
+
   return `
     <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon('close')}</button>
-    <div class="modal-body">
-      <h2>${escapeHtml(protocol.title)}</h2>
-      <p class="modal-subtitle">${escapeHtml(protocol.subtitle)}</p>
-      <p class="modal-price">${formatMoney(protocol.price)}</p>
-      <p>${escapeHtml(protocol.about)}</p>
+    <div class="modal-media-wrap modal-media-wrap--protocol">
+      <img src="${escapeHtml(protocol.image)}" alt="${escapeHtml(protocol.title)}" class="modal-hero" />
+      <span class="pill-tag">${escapeHtml(protocol.difficulty)}</span>
+      <span class="protocol-modal-duration">${icon('clock')}${escapeHtml(protocol.duration)}</span>
+    </div>
+    <div class="modal-body modal-body--split">
+      <div class="modal-intro-card">
+        <span class="difficulty-badge ${difficultyClass}">${escapeHtml(protocol.difficulty)} protocol</span>
+        <h2>${escapeHtml(protocol.title)}</h2>
+        <p class="modal-subtitle">${escapeHtml(protocol.subtitle)}</p>
+        <p>${escapeHtml(protocol.about)}</p>
+      </div>
 
-      <h3>Treatments Included</h3>
-      <ul class="treatment-list">
-        ${protocol.treatments.map(treatment => `<li>${escapeHtml(treatment)}</li>`).join('')}
-      </ul>
+      <aside class="modal-purchase-card" aria-label="Protocol purchase summary">
+        <span class="modal-card-eyebrow">Program investment</span>
+        <p class="modal-price">${formatMoney(protocol.price)}</p>
+        <div class="modal-mini-meta">
+          <span>${icon('clock')}${escapeHtml(protocol.duration)}</span>
+          <span>${icon('shield')}Supervised plan</span>
+        </div>
+        <button class="btn btn-cart block" type="button" data-add-protocol-cart="${escapeHtml(protocol.id)}">${icon('cart')}Add to Cart</button>
+      </aside>
 
-      <div class="protocol-stats">
+      <section class="modal-section">
+        <h3>Treatments Included</h3>
+        <ul class="treatment-list">
+          ${protocol.treatments.map(treatment => `<li>${icon('check')}<span>${escapeHtml(treatment)}</span></li>`).join('')}
+        </ul>
+      </section>
+
+      <section class="protocol-stats" aria-label="Protocol highlights">
         ${protocol.stats.map(stat => `
           <div class="stat-item">
             <strong>${escapeHtml(stat.value)}</strong>
             <span>${escapeHtml(stat.label)}</span>
           </div>
         `).join('')}
-      </div>
-
-      <button class="btn btn-cart block" type="button" data-add-protocol-cart="${escapeHtml(protocol.id)}">${icon('cart')}Add to Cart - ${formatMoney(protocol.price)}</button>
+      </section>
     </div>
   `
 }

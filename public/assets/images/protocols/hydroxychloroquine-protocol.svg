@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Hydroxychloroquine Protocol</title>
+  <desc id="desc">Premium abstract medical illustration for the hydroxychloroquine protocol detail modal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fffd"/>
+      <stop offset="0.48" stop-color="#e6f7f4"/>
+      <stop offset="1" stop-color="#d7edf3"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b39cff"/>
+      <stop offset="1" stop-color="#6547aa"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#092836" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <circle cx="532" cy="52" r="130" fill="#b39cff" opacity="0.20"/>
+  <circle cx="92" cy="358" r="150" fill="#6547aa" opacity="0.13"/>
+  <path d="M48 122c82-76 170 38 254-28 94-74 192-44 290 62" fill="none" stroke="#6547aa" stroke-width="2" opacity="0.16"/>
+  <g opacity="0.56" stroke="#ffffff" stroke-width="2">
+    <path d="M84 92h118M438 326h118M478 286h56"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="118" y="82" width="404" height="268" rx="36" fill="#ffffff" opacity="0.86"/>
+    <rect x="144" y="108" width="352" height="216" rx="28" fill="url(#accent)" opacity="0.13"/>
+  </g>
+  <g fill="none" stroke="url(#accent)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M258 142l98 36v78c0 70-54 118-98 138-44-20-98-68-98-138v-78z"/>
+  </g>
+  <g fill="#6547aa" opacity="0.16">
+    <circle cx="404" cy="142" r="18"/>
+    <circle cx="438" cy="190" r="12"/>
+    <circle cx="398" cy="278" r="10"/>
+  </g>
+  <g transform="translate(156 344)">
+    <rect width="328" height="44" rx="22" fill="#ffffff" opacity="0.92"/>
+    <circle cx="30" cy="22" r="10" fill="#6547aa"/>
+    <rect x="54" y="15" width="182" height="8" rx="4" fill="#6547aa" opacity="0.72"/>
+    <rect x="54" y="28" width="118" height="5" rx="2.5" fill="#6f8791" opacity="0.58"/>
+  </g>
+</svg>
