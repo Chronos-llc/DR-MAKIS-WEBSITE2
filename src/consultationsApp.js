@@ -166,7 +166,7 @@ function consultationModalTemplate(consultation) {
     <div class="consultation-modal-hero">
       ${heroMedia}
     </div>
-    <div class="modal-body">
+    <div class="modal-body modal-body--detail">
       <h2>${escapeHtml(consultation.title)}</h2>
       <p class="modal-subtitle">${escapeHtml(consultation.subtitle)}</p>
       <p class="modal-price">${formatMoney(consultation.price)}</p>

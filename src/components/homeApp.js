@@ -854,7 +854,7 @@ export function mountHomeApp(root, content) {
         <img src="${escapeHtml(program.image)}" alt="${escapeHtml(program.title)}" class="modal-hero" />
         <span class="pill-tag">${escapeHtml(program.badge)}</span>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-body--detail">
         <h2>${escapeHtml(program.title)}</h2>
         <p class="protocol-subtitle">${escapeHtml(program.subtitle)}</p>
 
