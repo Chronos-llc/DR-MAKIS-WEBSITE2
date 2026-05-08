@@ -48,7 +48,7 @@ const FOOTER_SECTION_MAP = {
 }
 
 
-const TELEGRAM_UPDATE_URL = 'https://t.me/drmakishealthtalk'
+const TELEGRAM_UPDATE_URL = 'https://t.me/drmakiscancerprotocols'
 const TELEGRAM_UPDATE_LABEL = 'Ivermectin Update'
 
 function telegramUpdateCtaTemplate(className = '', includeNavLink = false) {

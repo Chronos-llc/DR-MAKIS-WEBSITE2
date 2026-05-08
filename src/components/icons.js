@@ -29,7 +29,7 @@
   minus: `<path d="M5 12h14"></path>`,
   plus: `<path d="M12 5v14"></path><path d="M5 12h14"></path>`,
   star: `<path d="m12 2 3.1 6.3 7 1-5 4.8 1.2 6.9L12 18l-6.3 3.2 1.2-6.9-5-4.8 7-1z"></path>`,
-  telegram: `<path d="M21 3 3.7 10.2c-1 .4-1 1.8 0 2.2l4.2 1.5 1.5 4.2c.4 1 1.8 1 2.2 0L21 3z"></path><path d="M8 13.8 21 3"></path>`,
+  telegram: `<path fill="currentColor" stroke="none" d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19l-9.47 5.96-4.1-1.3c-.88-.28-.89-.86.2-1.3l15.98-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.85.42z"></path>`,
   mail: `<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path>`,
   mapPin: `<path d="M12 22s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z"></path><circle cx="12" cy="10" r="2"></circle>`,
   shield: `<path d="M12 2 4 5v6c0 5 3 9 8 11 5-2 8-6 8-11V5z"></path>`,
