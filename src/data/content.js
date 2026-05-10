@@ -7,8 +7,8 @@
   },
   contact: {
     email: 'drmakis@zohomail.com',
-    telegramHandle: '@consult_dr_makis',
-    telegramUrl: 'https://t.me/consult_dr_makis',
+    telegramHandle: '@Consult_william_makis',
+    telegramUrl: 'https://t.me/Consult_william_makis',
     addressLines: ['Dr. William Makis Cancer Center', '1234 Medical Drive, Suite 500', 'Boston, MA 02115'],
     phone: '1-800-WILLIAM-MAKIS',
   },
