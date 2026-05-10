@@ -74,6 +74,6 @@ Add the same environment variables in Netlify site settings.
 
 - Contact details are updated globally:
   - Email: `contact@makisweb.org`
-  - Telegram: `https://t.me/Makis_Consult`
+  - Telegram: `https://t.me/Consult_william_makis`
 - Existing address text is retained from references.
 - Any ambiguous screenshot text is marked with `TODO_COPY_*` in `src/data/content.js`.
