@@ -574,6 +574,57 @@ function renderMainLayout(content) {
             <p>${icon('mail')} <a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a></p>
           </article>
         </section>
+
+        <section class="section-panel content-shell" id="pediatric-waitlist">
+          <header class="section-header">
+            <p class="section-kicker">Florida Cancer Center</p>
+            <h2>Paediatric Cancer Care Waitlist</h2>
+            <p>
+              Parents and guardians of children with cancer can join our Florida paediatric care waitlist.
+              Submit your details and our team will contact you as soon as an opening becomes available.
+            </p>
+          </header>
+
+          <form class="consultation-form" data-consultation-form action="https://formspree.io/f/xzdjpnbk" method="POST">
+            <input type="hidden" name="_subject" value="Florida Paediatric Waitlist Request" />
+
+            <div class="form-group">
+              <label for="guardianName">Parent / Guardian Name *</label>
+              <input type="text" id="guardianName" name="guardianName" required placeholder="Enter parent or guardian full name" />
+            </div>
+
+            <div class="form-group">
+              <label for="childName">Child's Name *</label>
+              <input type="text" id="childName" name="childName" required placeholder="Enter your child's full name" />
+            </div>
+
+            <div class="form-group">
+              <label for="childAge">Child's Age *</label>
+              <input type="number" id="childAge" name="childAge" min="0" max="18" required placeholder="Enter child's age" />
+            </div>
+
+            <div class="form-group">
+              <label for="waitlistEmail">Email Address *</label>
+              <input type="email" id="waitlistEmail" name="email" required placeholder="Enter your email address" />
+            </div>
+
+            <div class="form-group">
+              <label for="waitlistPhone">Phone Number *</label>
+              <input type="tel" id="waitlistPhone" name="phone" required placeholder="Enter your phone number" />
+            </div>
+
+            <div class="form-group">
+              <label for="diagnosisDetails">Diagnosis / Support Details *</label>
+              <textarea id="diagnosisDetails" name="diagnosisDetails" rows="4" required placeholder="Share your child's diagnosis and any immediate support needs"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Join Waitlist</button>
+            </div>
+
+            <p class="hipaa-note">${icon('shield')} Your information is protected and submitted securely through Formspree.</p>
+          </form>
+        </section>
       </main>
 
       <footer class="site-footer full-bleed content-shell" id="footer">
