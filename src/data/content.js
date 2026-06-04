@@ -2,7 +2,7 @@
   brand: {
     doctorName: 'Dr. William Makis',
     highlightedLastName: 'Makis',
-    logo: 'https://i.postimg.cc/HLmNLbWW/Screenshot-20260303-150533-X.jpg',
+    logo: '/assets/images/landing/dr-makis-logo.webp',
     tagline: 'Leading the way in advanced cancer diagnostics and personalized oncology care.',
   },
   contact: {
@@ -22,8 +22,8 @@
     profileTitle: 'Dr. William Makis, MD',
     profileSubtitle: 'Nuclear Medicine Physician & Oncologist',
     profileHighlight: '500+ Research Publications',
-    backgroundImage: '/hero-oncology-aurora.svg',
-    previousBackgroundImage: 'https://i.postimg.cc/HLmNLbWW/Screenshot-20260303-150533-X.jpg',
+    backgroundImage: '/assets/images/landing/hero-banner.webp',
+    previousBackgroundImage: '/assets/images/landing/dr-makis-logo.webp',
     stats: [
       {
         label: 'Patients Treated',
@@ -57,7 +57,7 @@
         title: 'Supplements',
         description: 'Premium vitamins and natural supplements',
         cta: 'Explore Products',
-        image: 'https://i.postimg.cc/YCC5N6K1/vitamins-dietary-supplements.png',
+        image: '/assets/images/landing/cat-supplements.webp',
       },
       {
         id: 'protocols',
@@ -65,7 +65,7 @@
         title: 'Protocols',
         description: 'Comprehensive wellness programs',
         cta: 'Explore Protocols',
-        image: 'https://i.postimg.cc/pTCQBFtm/Screenshot-20260303-135036-Photo-Editor.jpg',
+        image: '/assets/images/landing/cat-protocols.webp',
       },
       {
         id: 'consultations',
@@ -73,7 +73,7 @@
         title: 'Consultations',
         description: 'Personalized expert guidance',
         cta: 'Book Now',
-        image: 'https://i.postimg.cc/Fz1SgCpt/doctor-writing-a-medical-prescription.jpg',
+        image: '/assets/images/landing/cat-consultations.webp',
       },
     ],
   },
@@ -159,7 +159,7 @@
         'Oncoplastic Surgery Pathway',
       ],
       price: 500,
-      image: 'https://i.postimg.cc/bJnryX37/360-F-1693923845-5Cp-TDSP0vqo-U5Jy-WAQ2G06Pnvj-XPc-Ii-V.jpg',
+      image: '/assets/images/landing/protocol-breast-cancer.webp',
     },
     {
       id: 'lung-cancer',
@@ -186,7 +186,7 @@
         'Liquid Biopsy Monitoring',
       ],
       price: 500,
-      image: 'https://i.postimg.cc/Xq3jnrZk/images.jpg',
+      image: '/assets/images/landing/protocol-lung-cancer.webp',
     },
     {
       id: 'colorectal-cancer',
@@ -213,7 +213,7 @@
         'Liver Metastasis Treatment',
       ],
       price: 500,
-      image: 'https://i.postimg.cc/d30fRFgq/oandasan-access-to-what.jpg',
+      image: '/assets/images/landing/protocol-colorectal-cancer.webp',
     },
     {
       id: 'prostate-cancer',
@@ -240,7 +240,7 @@
         'PSMA-Targeted Therapy',
       ],
       price: 500,
-      image: 'https://i.postimg.cc/65v0kTrM/78ffb81ad0e9abafa494e65c8edd2d14.jpg',
+      image: '/assets/images/landing/protocol-prostate-cancer.webp',
     },
     {
       id: 'skin-cancer',
@@ -267,7 +267,7 @@
         'Targeted Therapy (BRAF)',
       ],
       price: 500,
-      image: 'https://i.postimg.cc/cHPD337w/734677.jpg',
+      image: '/assets/images/landing/protocol-skin-cancer.webp',
     },
     {
       id: 'blood-cancers',
@@ -294,7 +294,7 @@
         'Clinical Trials',
       ],
       price: 500,
-      image: 'https://i.postimg.cc/8chbr0P2/54b171d23b6a3e0afd307c000de91615-78680c5367.webp',
+      image: '/assets/images/landing/protocol-blood-cancers.webp',
     },
   ],
   processSection: {
@@ -531,118 +531,6 @@
         description:
           "Doctorem Medicinae et Chirurgiae Magistrum - The highest medical degree awarded by McGill University, one of Canada's most prestigious medical schools.",
         image: 'https://i.postimg.cc/YS6gRWwP/Screenshot-20260303-142523-Chrome-Beta.jpg',
-      },
-    ],
-  },
-  testimonialsSection: {
-    kicker: 'TESTIMONIALS',
-    title: 'Stories of Hope & Recovery',
-    description:
-      'Hear from patients who have experienced the Dr. William Makis difference in their cancer journey.',
-    testimonials: [
-      {
-        id: 'jennifer-martinez',
-        quote:
-          'The team at Dr. William Makis gave me hope when I needed it most. Their personalized approach to my treatment made all the difference in my recovery journey.',
-        name: 'Jennifer Martinez',
-        role: 'Breast Cancer Survivor',
-        avatar: 'https://i.postimg.cc/VvRT0wvF/Screenshot-20260304-215438-Chrome-Beta.jpg',
-      },
-      {
-        id: 'linda-davis',
-        quote:
-          'From diagnosis to treatment, every step was handled with such care and professionalism. The innovative therapies here truly saved my life.',
-        name: 'Linda Davis',
-        role: 'Lung Cancer Patient',
-        avatar: 'https://i.postimg.cc/hjR3Cv7v/b865d335-b1f8-4c3a-bc6c-3583b094d29d.jpg',
-      },
-      {
-        id: 'leo-thompson',
-        quote:
-          'The support I received went beyond medical care. The whole team treated me like family and ensured I was comfortable throughout my treatment.',
-        name: 'Leo Thompson',
-        role: 'Colorectal Cancer Survivor',
-        avatar: 'https://i.postimg.cc/908bjQzL/501898ee-c038-4f21-96f5-a291205a0286.jpg',
-      },
-      {
-        id: 'michael-johnson',
-        quote:
-          'Dr. Makis and his team are exceptional. Their expertise and compassion made a difficult time much more manageable. Forever grateful.',
-        name: 'Michael Johnson',
-        role: 'Prostate Cancer Survivor',
-        avatar: 'https://i.postimg.cc/VL299TtK/3c49ce89-9283-4389-a8aa-d0b54fe4213e.jpg',
-      },
-      {
-        id: 'david-goose',
-        quote:
-          'The cutting-edge treatments and caring staff gave me a second chance at life. I cannot thank Dr. William Makis enough for their dedication.',
-        name: 'David Goose',
-        role: 'Lung Cancer Survivor',
-        avatar: 'https://i.postimg.cc/sDG72cL2/32d2409e-3478-4b0f-be6a-4460af96d028.jpg',
-      },
-      {
-        id: 'mary-davies',
-        quote:
-          'From my first consultation to my final treatment, the team was with me every step of the way. Their expertise and warmth made all the difference.',
-        name: 'Mary Davies',
-        role: 'Skin Cancer Survivor',
-        avatar: 'https://i.postimg.cc/3JjmsZb0/Screenshot-20260304-221340-Chrome-Beta.jpg',
-      },
-    ],
-  },
-  testimonialsSection: {
-    kicker: 'TESTIMONIALS',
-    title: 'Stories of Hope & Recovery',
-    description:
-      'Hear from patients who have experienced the Dr. William Makis difference in their cancer journey.',
-    testimonials: [
-      {
-        id: 'jennifer-martinez',
-        quote:
-          'The team at Dr. William Makis gave me hope when I needed it most. Their personalized approach to my treatment made all the difference in my recovery journey.',
-        name: 'Jennifer Martinez',
-        role: 'Breast Cancer Survivor',
-        avatar: 'https://i.postimg.cc/VvRT0wvF/Screenshot-20260304-215438-Chrome-Beta.jpg',
-      },
-      {
-        id: 'linda-davis',
-        quote:
-          'From diagnosis to treatment, every step was handled with such care and professionalism. The innovative therapies here truly saved my life.',
-        name: 'Linda Davis',
-        role: 'Lung Cancer Patient',
-        avatar: 'https://i.postimg.cc/hjR3Cv7v/b865d335-b1f8-4c3a-bc6c-3583b094d29d.jpg',
-      },
-      {
-        id: 'leo-thompson',
-        quote:
-          'The support I received went beyond medical care. The whole team treated me like family and ensured I was comfortable throughout my treatment.',
-        name: 'Leo Thompson',
-        role: 'Colorectal Cancer Survivor',
-        avatar: 'https://i.postimg.cc/908bjQzL/501898ee-c038-4f21-96f5-a291205a0286.jpg',
-      },
-      {
-        id: 'michael-johnson',
-        quote:
-          'Dr. Makis and his team are exceptional. Their expertise and compassion made a difficult time much more manageable. Forever grateful.',
-        name: 'Michael Johnson',
-        role: 'Prostate Cancer Survivor',
-        avatar: 'https://i.postimg.cc/VL299TtK/3c49ce89-9283-4389-a8aa-d0b54fe4213e.jpg',
-      },
-      {
-        id: 'david-goose',
-        quote:
-          'The cutting-edge treatments and caring staff gave me a second chance at life. I cannot thank Dr. William Makis enough for their dedication.',
-        name: 'David Goose',
-        role: 'Lung Cancer Survivor',
-        avatar: 'https://i.postimg.cc/sDG72cL2/32d2409e-3478-4b0f-be6a-4460af96d028.jpg',
-      },
-      {
-        id: 'mary-davies',
-        quote:
-          'From my first consultation to my final treatment, the team was with me every step of the way. Their expertise and warmth made all the difference.',
-        name: 'Mary Davies',
-        role: 'Skin Cancer Survivor',
-        avatar: 'https://i.postimg.cc/3JjmsZb0/Screenshot-20260304-221340-Chrome-Beta.jpg',
       },
     ],
   },

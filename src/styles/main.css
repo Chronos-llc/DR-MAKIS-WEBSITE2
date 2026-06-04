@@ -448,7 +448,18 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.4;
+  opacity: 0.55;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(135deg, rgba(247, 251, 250, 0.92) 0%, rgba(238, 245, 245, 0.72) 35%, rgba(15, 157, 146, 0.06) 70%, transparent 100%),
+    linear-gradient(to top, rgba(247, 251, 250, 0.8) 0%, transparent 30%);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -3872,7 +3883,6 @@ input {
   height: 170px;
   object-fit: cover;
   border-radius: 12px;
-  border: 1px dashed #91d4e1;
   background: linear-gradient(145deg, #f2fcff 0%, #d9f4f9 100%);
 }
 
