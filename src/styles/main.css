@@ -2141,16 +2141,16 @@ input {
 .modal-body h2 {
   margin-right: 56px;
   line-height: 1.15;
-  font-size: clamp(1.8rem, 6vw, 2.35rem);
+  font-size: clamp(1.35rem, 3.8vw, 2rem);
 }
 
 .modal-body h3 {
   line-height: 1.2;
-  font-size: clamp(1.3rem, 5.2vw, 1.85rem);
+  font-size: clamp(1.05rem, 3vw, 1.4rem);
 }
 
 .modal-price {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   margin: 10px 0;
   font-family: var(--font-display);
   color: var(--primary-dark);
@@ -3474,7 +3474,7 @@ input {
   color: #2a3e52;
   font-weight: 600;
   line-height: 1.35;
-  font-size: clamp(0.98rem, 4.2vw, 1.16rem);
+  font-size: clamp(0.84rem, 2.6vw, 0.95rem);
   overflow-wrap: anywhere;
 }
 
@@ -3494,8 +3494,8 @@ input {
 
 .stat-item strong {
   display: block;
-  font-size: clamp(1.5rem, 7vw, 1.95rem);
-  line-height: 1.1;
+  font-size: clamp(1.1rem, 3.8vw, 1.55rem);
+  line-height: 1.15;
   color: var(--primary-dark);
   font-family: var(--font-display);
   margin-bottom: 4px;
@@ -3504,7 +3504,7 @@ input {
 
 .stat-item span {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   overflow-wrap: anywhere;
 }
 
@@ -4075,7 +4075,7 @@ input {
   }
 
   .modal-price {
-    font-size: clamp(1.7rem, 10vw, 2.2rem);
+    font-size: clamp(1.35rem, 4vw, 1.75rem);
   }
 }
 
@@ -4208,7 +4208,13 @@ input {
 
 .modal-subtitle {
   max-width: 62ch;
-  font-size: clamp(1.02rem, 1.8vw, 1.12rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.02rem);
+  line-height: 1.5;
+}
+
+.modal-body p {
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  line-height: 1.58;
 }
 
 .modal-price {
@@ -4424,15 +4430,59 @@ input {
 
   .modal-body {
     padding: 20px;
+    gap: 14px;
   }
 
   .modal-body h2 {
     margin-right: 34px;
+    font-size: 1.3rem;
+  }
+
+  .modal-body h3 {
+    font-size: 1.05rem;
+  }
+
+  .modal-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .modal-body p {
+    font-size: 0.88rem;
+  }
+
+  .modal-price {
+    font-size: 1.35rem;
+  }
+
+  .stat-item strong {
+    font-size: 1.05rem;
+  }
+
+  .stat-item span {
+    font-size: 0.75rem;
+  }
+
+  .protocol-stats {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .treatment-list li {
+    font-size: 0.82rem;
+    padding: 8px 12px;
   }
 
   .treatment-list,
   .trust-row {
     grid-template-columns: 1fr;
+  }
+
+  .modal-card-eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .modal-mini-meta {
+    font-size: 0.85rem;
   }
 
   .protocol-modal-duration {

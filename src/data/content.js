@@ -1124,7 +1124,7 @@
       duration: '3 Months',
       difficulty: 'Easy',
       price: 2600,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/ivermectin-protocol.png',
       about: 'The Ivermectin Protocol is designed for individuals seeking a simple, evidence-based approach to health support. This program involves daily or alternate-day use of ivermectin tablets under medical supervision.',
       treatments: [
         'Ivermectin 3mg or 12mg tablets',
@@ -1148,7 +1148,7 @@
       duration: '3 Months',
       difficulty: 'Easy',
       price: 2800,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/fenbendazole-protocol.png',
       about: 'The Fenbendazole Protocol is designed for individuals seeking a straightforward approach to health support. This program involves daily use of fenbendazole, often with fat-containing food to enhance absorption.',
       treatments: [
         'Fenbendazole 222mg daily',
@@ -1172,7 +1172,7 @@
       duration: '3 Months',
       difficulty: 'Moderate',
       price: 2500,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/mebendazole-protocol.png',
       about: 'The Mebendazole Protocol is designed for individuals seeking a targeted approach to health support. This program involves the use of mebendazole tablets, often in combination with other supportive supplements.',
       treatments: [
         'Mebendazole 100mg tablets',
@@ -1196,7 +1196,7 @@
       duration: '3 Months',
       difficulty: 'Advanced',
       price: 2900,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/hydroxychloroquine-protocol.png',
       about: 'The Hydroxychloroquine Protocol is designed for individuals seeking immune modulation and anti-inflammatory support. This program involves daily use of hydroxychloroquine under close medical supervision.',
       treatments: [
         'Hydroxychloroquine 200mg-400mg daily',
@@ -1220,7 +1220,7 @@
       duration: '3 Months',
       difficulty: 'Advanced',
       price: 2700,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/jo-tippens-protocol.png',
       about: 'The Jo Tippens Cancer Protocol is a comprehensive multi-agent regimen designed for individuals seeking advanced health support. This protocol combines fenbendazole, ivermectin, albendazole, serrapeptase, TUDCA, curcumin, and other supportive agents.',
       treatments: [
         'Fenbendazole',
@@ -1246,7 +1246,7 @@
       duration: '3 Months',
       difficulty: 'Moderate',
       price: 2500,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/vaccine-detox-protocol.png',
       about: 'The Vaccine Detoxification Protocol is designed to support the body\'s natural detoxification processes after vaccination. This program includes targeted supplements and lifestyle modifications to aid in toxin elimination.',
       treatments: [
         'Detoxification supplements',
@@ -1271,7 +1271,7 @@
       duration: '3 Months',
       difficulty: 'Easy',
       price: 3500,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/parasite-detox-protocol.png',
       about: 'The Parasite Detoxification Protocol is designed to help individuals clear parasitic infections using a comprehensive approach. This program combines pharmaceutical antiparasitic agents with natural herbs and supportive supplements.',
       treatments: [
         'Ivermectin',
@@ -1296,7 +1296,7 @@
       duration: '3 Months',
       difficulty: 'Advanced',
       price: 5000,
-      image: '/placeholders/card-placeholder.svg',
+      image: '/assets/images/protocols/complete-cancer-protocol.png',
       about: 'The Complete Cancer Protocol is an advanced, high-intensity program designed for individuals seeking comprehensive cancer support. This protocol combines multiple antiparasitic agents with a wide range of supportive supplements and therapies.',
       treatments: [
         'Fenbendazole',
