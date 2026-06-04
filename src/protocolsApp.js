@@ -394,7 +394,7 @@ function protocolModalTemplate(protocol) {
   return `
     <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon('close')}</button>
     <div class="modal-media-wrap modal-media-wrap--protocol">
-      <img src="${escapeHtml(protocol.image)}" alt="${escapeHtml(protocol.title)}" class="modal-hero" />
+      <img src="${escapeHtml(protocol.image)}" alt="${escapeHtml(protocol.title)}" class="modal-hero" loading="lazy" />
       <span class="pill-tag">${escapeHtml(protocol.difficulty)}</span>
       <span class="protocol-modal-duration">${icon('clock')}${escapeHtml(protocol.duration)}</span>
     </div>
