@@ -1043,7 +1043,7 @@
       delivery: 'Video Call',
       price: 650,
       popular: true,
-      image: '/assets/images/consultations/initial-consultation.svg',
+      image: '/assets/images/consultations/initial-consultation.webp',
     },
     {
       id: 'follow-up-consultation',
@@ -1057,7 +1057,7 @@
       delivery: 'Video Call',
       price: 460,
       popular: false,
-      image: '/assets/images/consultations/follow-up-consultation.svg',
+      image: '/assets/images/consultations/follow-up-consultation.webp',
     },
     {
       id: 'protocol-review',
@@ -1072,7 +1072,7 @@
       delivery: 'Video Call + Written Report',
       price: 500,
       popular: true,
-      image: '/assets/images/consultations/protocol-review.svg',
+      image: '/assets/images/consultations/protocol-review.webp',
     },
     {
       id: 'supplement-selection-consultation',
@@ -1086,7 +1086,7 @@
       delivery: 'Video Call',
       price: 590,
       popular: false,
-      image: '/assets/images/consultations/supplement-selection-consultation.svg',
+      image: '/assets/images/consultations/supplement-selection-consultation.webp',
     },
     {
       id: 'extended-consultation-package',
@@ -1103,7 +1103,7 @@
       originalPrice: 8400,
       saveNote: 'Save $3,900.00',
       popular: true,
-      image: '/assets/images/consultations/extended-consultation-package.svg',
+      image: '/assets/images/consultations/extended-consultation-package.webp',
     },
   ],
   protocolsPage: {
