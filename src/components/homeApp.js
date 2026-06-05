@@ -130,7 +130,7 @@ function programsCardsTemplate(programs) {
       (program) => `
       <article class="protocol-card" id="program-${escapeHtml(program.id)}">
         <div class="protocol-image-wrap">
-          <img src="${escapeHtml(program.image)}" alt="${escapeHtml(program.title)}" class="protocol-image" />
+          <img src="${escapeHtml(program.image)}" alt="${escapeHtml(program.title)}" class="protocol-image" loading="lazy" />
           <span class="pill-tag">${escapeHtml(program.badge)}</span>
         </div>
         <div class="protocol-body">
@@ -197,7 +197,7 @@ function productSlidesTemplate(products) {
       <article class="product-slide ${index === 0 ? 'is-active' : ''}" data-product-slide="${escapeHtml(
         product.id
       )}" aria-hidden="${index === 0 ? 'false' : 'true'}">
-        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="product-image" />
+        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="product-image" loading="lazy" />
         <div class="product-info">
           <h3>${escapeHtml(product.name)}</h3>
           <p class="rating-line">${renderStars(product.rating)} (${escapeHtml(product.reviews)})</p>
@@ -225,7 +225,7 @@ function categoryCardsTemplate(cards) {
     .map(
       (card) => `
       <article class="category-card">
-        <img src="${escapeHtml(card.image)}" alt="${escapeHtml(card.title)}" class="category-image" />
+        <img src="${escapeHtml(card.image)}" alt="${escapeHtml(card.title)}" class="category-image" loading="lazy" />
         <div class="category-overlay"></div>
         <div class="category-content">
           <span class="category-icon">${icon(card.icon)}</span>
@@ -260,7 +260,7 @@ function testimonialsTemplate(testimonials) {
         </p>
         <p class="testimonial-quote">\"${escapeHtml(item.quote)}\"</p>
         <div class="person-row">
-          <img src="${escapeHtml(item.avatar)}" alt="${escapeHtml(item.name)}" class="avatar-sm" />
+          <img src="${escapeHtml(item.avatar)}" alt="${escapeHtml(item.name)}" class="avatar-sm" loading="lazy" />
           <div class="testimonial-person">
             <strong>${escapeHtml(item.name)}</strong>
             <p>${escapeHtml(item.role)}</p>
@@ -498,7 +498,7 @@ function renderMainLayout(content) {
                   <a class="cert-media" href="${escapeHtml(cert.image)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(
                     cert.title
                   )} certificate image">
-                    <img src="${escapeHtml(cert.image)}" alt="${escapeHtml(cert.title)} certificate" class="cert-image" />
+                    <img src="${escapeHtml(cert.image)}" alt="${escapeHtml(cert.title)} certificate" class="cert-image" loading="lazy" />
                     <span class="cert-enlarge-pill">Click to enlarge</span>
                   </a>
                   <div class="cert-body">
@@ -828,7 +828,7 @@ export function mountHomeApp(root, content) {
   function cartItemTemplate(item) {
     return `
       <article class="cart-item" data-cart-id="${escapeHtml(item.id)}" data-cart-type="${escapeHtml(item.type)}">
-        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" />
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" />
         <div class="cart-item-info">
           <span class="type-pill">${escapeHtml(item.type === 'product' ? 'Product' : content.misc.cartTypeLabel)}</span>
           <h3>${escapeHtml(item.title)}</h3>

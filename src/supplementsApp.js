@@ -116,7 +116,7 @@ function supplementCardTemplate(supplement) {
       </div>
       <div class="protocol-body">
         <div class="supplement-image-placeholder">
-          <img src="${escapeHtml(supplement.image)}" alt="${escapeHtml(supplement.name)} placeholder" class="supplement-placeholder-visual" />
+          <img src="${escapeHtml(supplement.image)}" alt="${escapeHtml(supplement.name)} placeholder" class="supplement-placeholder-visual" loading="lazy" />
           <span class="supplement-image-label">In Stock</span>
         </div>
         ${ratingTemplate(supplement.id)}
@@ -543,7 +543,7 @@ export function mountSupplementsApp(root, content) {
   function cartItemTemplate(item) {
     return `
       <article class="cart-item" data-cart-id="${escapeHtml(item.id)}" data-cart-type="${escapeHtml(item.type)}">
-        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" />
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" />
         <div class="cart-item-info">
           <span class="type-pill">${escapeHtml(item.type === 'product' ? 'Product' : content.misc.cartTypeLabel)}</span>
           <h3>${escapeHtml(item.title)}</h3>

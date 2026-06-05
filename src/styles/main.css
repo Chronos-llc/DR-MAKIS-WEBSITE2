@@ -4817,13 +4817,14 @@ body {
   top: 10px;
   width: calc(100% - (var(--page-gutter) * 2));
   margin: 10px var(--page-gutter) 0;
-  padding: 10px 14px;
+  padding: 10px 24px;
   border: 1px solid rgba(214, 228, 228, 0.9);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 18px 46px rgba(10, 31, 44, 0.1);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   backdrop-filter: blur(18px) saturate(150%);
+  overflow: hidden;
 }
 
 .brand-logo {
