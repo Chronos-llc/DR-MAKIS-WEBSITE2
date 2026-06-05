@@ -7,7 +7,7 @@
   getTotals,
 } from './cartStore.js'
 import { icon } from './icons.js'
-import { escapeHtml, setupFloatingTelegramButton, setupRevealTransitions, setupSmartsuppWidget, submitFormspree } from './utils.js'
+import { escapeHtml, setupFloatingTelegramButton, setupFloatingWhatsAppButton, setupRevealTransitions, setupSmartsuppWidget, submitFormspree } from './utils.js'
 
 function cartSummaryItems(items) {
   if (!items.length) {
@@ -119,6 +119,7 @@ export function mountCheckoutApp(root, content) {
 
     setupRevealTransitions(root)
     setupFloatingTelegramButton(content.contact)
+    setupFloatingWhatsAppButton('12495763746')
     
 
     const form = root.querySelector('#checkout-form')
