@@ -84,19 +84,20 @@ export function setupHeroParticles(container) {
 
   const ctx = canvas.getContext('2d')
   let width, height, dpr, particles, orbs, animId
-  const PARTICLE_COUNT = 80
-  const ORB_COUNT = 5
-  const CONNECT_DIST = 160
+  const PARTICLE_COUNT = 110
+  const ORB_COUNT = 6
+  const CONNECT_DIST = 175
   const MOUSE = { x: -9999, y: -9999 }
-  const MOUSE_RADIUS = 180
+  const MOUSE_RADIUS = 200
 
   /* Palette: teal-dominant with white + gold accents */
   const COLORS = [
-    'rgba(15,157,146,0.65)',  /* teal */
-    'rgba(15,157,146,0.45)',
-    'rgba(255,255,255,0.55)', /* white */
-    'rgba(244,179,33,0.35)',  /* gold accent */
-    'rgba(8,32,51,0.40)',     /* dark navy */
+    'rgba(15,157,146,0.85)',  /* teal strong */
+    'rgba(15,157,146,0.60)',  /* teal mid */
+    'rgba(20,180,170,0.55)',  /* lighter teal */
+    'rgba(255,255,255,0.70)', /* white */
+    'rgba(244,179,33,0.45)',  /* gold accent */
+    'rgba(8,32,51,0.50)',     /* dark navy */
   ]
 
   function resize() {
@@ -130,9 +131,9 @@ export function setupHeroParticles(container) {
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.15,
       vy: (Math.random() - 0.5) * 0.12,
-      r: 40 + Math.random() * 80,
+      r: 50 + Math.random() * 100,
       hue: Math.random() < 0.7 ? 174 : 42, /* teal or gold */
-      alpha: 0.04 + Math.random() * 0.05,
+      alpha: 0.06 + Math.random() * 0.07,
     }
   }
 
@@ -200,9 +201,9 @@ export function setupHeroParticles(container) {
         const dist = Math.sqrt(dx * dx + dy * dy)
         const threshold = CONNECT_DIST * ((a.depth + b.depth) / 2)
         if (dist < threshold) {
-          const alpha = (1 - dist / threshold) * 0.18 * ((a.depth + b.depth) / 2)
+          const alpha = (1 - dist / threshold) * 0.32 * ((a.depth + b.depth) / 2)
           ctx.strokeStyle = `rgba(15,157,146,${alpha})`
-          ctx.lineWidth = 0.6 * ((a.depth + b.depth) / 2)
+          ctx.lineWidth = 0.8 * ((a.depth + b.depth) / 2)
           ctx.beginPath()
           ctx.moveTo(a.x, a.y)
           ctx.lineTo(b.x, b.y)
@@ -217,7 +218,7 @@ export function setupHeroParticles(container) {
       const r = p.r * pulseScale
 
       /* Outer glow */
-      ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${0.08 * p.depth})`)
+      ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${0.14 * p.depth})`)
       ctx.beginPath()
       ctx.arc(p.x, p.y, r * 3, 0, Math.PI * 2)
       ctx.fill()
