@@ -689,7 +689,7 @@ input {
 
 #home .hero-metrics .metric-label {
   margin-top: 8px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1rem;
 }
 
@@ -4828,27 +4828,28 @@ input {
 
 /* Landing page polish pass: premium clinical depth, clearer hierarchy, and reversible hero artwork. */
 :root {
-  --bg: #eef5f5;
-  --surface: #ffffff;
-  --surface-soft: #f5fbfa;
+  --bg: #f0eeeb;
+  --surface: #faf9f7;
+  --surface-soft: #f5f3f0;
   --text: #0b1f33;
   --text-muted: #526779;
   --primary: #0f9d92;
   --primary-dark: #08766e;
   --primary-ink: #063d45;
   --accent: #f4b321;
-  --border: #d6e4e4;
-  --card-shadow: 0 20px 52px rgba(8, 35, 48, 0.1);
-  --card-shadow-hover: 0 28px 70px rgba(8, 35, 48, 0.16);
+  --border: #ddd9d4;
+  --card-shadow: 0 20px 52px rgba(8, 35, 48, 0.08);
+  --card-shadow-hover: 0 28px 70px rgba(8, 35, 48, 0.14);
   --radius-lg: 28px;
   --radius-md: 18px;
 }
 
 body {
   background:
-    radial-gradient(circle at 8% 8%, rgba(15, 157, 146, 0.12), transparent 32rem),
-    radial-gradient(circle at 92% 14%, rgba(244, 179, 33, 0.1), transparent 28rem),
-    linear-gradient(180deg, #f7fbfb 0%, var(--bg) 48%, #eaf3f4 100%);
+    radial-gradient(circle at 6% 12%, rgba(15, 157, 146, 0.06), transparent 36rem),
+    radial-gradient(circle at 90% 8%, rgba(244, 179, 33, 0.05), transparent 30rem),
+    radial-gradient(circle at 50% 80%, rgba(15, 157, 146, 0.04), transparent 40rem),
+    linear-gradient(180deg, #f2f0ed 0%, var(--bg) 40%, #edeae7 100%);
 }
 
 .site-wrap {
@@ -4994,8 +4995,8 @@ body {
   inset: 0;
   z-index: 0;
   background:
-    linear-gradient(90deg, rgba(4, 14, 26, 0.65) 0%, rgba(4, 14, 26, 0.35) 36%, transparent 68%, transparent 100%),
-    linear-gradient(180deg, transparent 58%, rgba(4, 14, 26, 0.3) 100%);
+    linear-gradient(90deg, rgba(4, 14, 26, 0.4) 0%, rgba(4, 14, 26, 0.15) 36%, transparent 68%, transparent 100%),
+    linear-gradient(180deg, transparent 58%, rgba(4, 14, 26, 0.15) 100%);
   pointer-events: none;
 }
 
@@ -5010,14 +5011,14 @@ body {
   font-size: clamp(3.05rem, 7.2vw, 6.65rem);
   line-height: 0.96;
   text-wrap: balance;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 24px rgba(0, 229, 255, 0.18), 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 #home .hero-content > p {
   max-width: 620px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.94);
   font-size: clamp(1.08rem, 1.65vw, 1.28rem);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
 }
 
 #home .section-pill {
@@ -5108,6 +5109,11 @@ body {
   margin: 24px 0;
 }
 
+@keyframes signalWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
 .hero-signal-grid span {
   min-height: 92px;
   border: 1px solid rgba(15, 157, 146, 0.2);
@@ -5115,11 +5121,13 @@ body {
   background:
     linear-gradient(180deg, rgba(15, 157, 146, 0.12), rgba(8, 32, 51, 0.6)),
     linear-gradient(180deg, transparent 38%, rgba(15, 157, 146, 0.3) 38% 42%, transparent 42% 60%, rgba(244, 179, 33, 0.35) 60% 64%, transparent 64%);
+  animation: signalWave 2.8s ease-in-out infinite;
 }
 
-.hero-signal-grid span:nth-child(2) { transform: translateY(16px); }
-.hero-signal-grid span:nth-child(3) { transform: translateY(6px); }
-.hero-signal-grid span:nth-child(4) { transform: translateY(22px); }
+.hero-signal-grid span:nth-child(1) { animation-delay: 0s; }
+.hero-signal-grid span:nth-child(2) { animation-delay: 0.35s; }
+.hero-signal-grid span:nth-child(3) { animation-delay: 0.7s; }
+.hero-signal-grid span:nth-child(4) { animation-delay: 1.05s; }
 
 .hero-visual-card ul {
   display: grid;
@@ -5127,7 +5135,7 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 700;
 }
 
