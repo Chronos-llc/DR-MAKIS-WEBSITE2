@@ -16,6 +16,7 @@ import {
   focusTrap,
   scrollLock,
   setupFloatingTelegramButton,
+  setupFloatingWhatsAppButton,
   setupRevealTransitions,
   setupVapiWidget,
   submitConsultationRequest,
@@ -789,6 +790,7 @@ export function mountHomeApp(root, content) {
 
   setupRevealTransitions(root)
   setupFloatingTelegramButton(content.contact)
+  setupFloatingWhatsAppButton('12495763746')
   setupVapiWidget()
 
 
