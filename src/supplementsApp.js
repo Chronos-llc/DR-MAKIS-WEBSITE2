@@ -16,6 +16,7 @@ import {
   focusTrap,
   scrollLock,
   setupFloatingTelegramButton,
+  setupFloatingWhatsAppButton,
   setupRevealTransitions,
   setupSmartsuppWidget,
   submitConsultationRequest,
@@ -446,6 +447,7 @@ export function mountSupplementsApp(root, content) {
 
   setupRevealTransitions(root)
   setupFloatingTelegramButton(content.contact)
+  setupFloatingWhatsAppButton('12495763746')
   setupSmartsuppWidget()
 
 
