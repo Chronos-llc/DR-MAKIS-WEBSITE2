@@ -63,6 +63,205 @@ export function toSlug(value) {
     .replace(/^-+|-+$/g, '')
 }
 
+/**
+ * Animated molecular particle network for hero backgrounds.
+ * Creates floating nodes with depth, connected by translucent lines,
+ * plus drifting glow orbs for atmosphere.
+ */
+export function setupHeroParticles(container) {
+  if (typeof document === 'undefined' || !container) return
+
+  const canvas = document.createElement('canvas')
+  canvas.className = 'hero-bg hero-particles-canvas'
+  canvas.setAttribute('aria-hidden', 'true')
+  canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;'
+
+  /* Remove existing static background image */
+  const oldBg = container.querySelector('.hero-bg')
+  if (oldBg && oldBg !== canvas) oldBg.remove()
+
+  container.insertBefore(canvas, container.firstChild)
+
+  const ctx = canvas.getContext('2d')
+  let width, height, dpr, particles, orbs, animId
+  const PARTICLE_COUNT = 80
+  const ORB_COUNT = 5
+  const CONNECT_DIST = 160
+  const MOUSE = { x: -9999, y: -9999 }
+  const MOUSE_RADIUS = 180
+
+  /* Palette: teal-dominant with white + gold accents */
+  const COLORS = [
+    'rgba(15,157,146,0.65)',  /* teal */
+    'rgba(15,157,146,0.45)',
+    'rgba(255,255,255,0.55)', /* white */
+    'rgba(244,179,33,0.35)',  /* gold accent */
+    'rgba(8,32,51,0.40)',     /* dark navy */
+  ]
+
+  function resize() {
+    const rect = container.getBoundingClientRect()
+    dpr = Math.min(window.devicePixelRatio || 1, 2)
+    width = rect.width
+    height = rect.height
+    canvas.width = width * dpr
+    canvas.height = height * dpr
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+  }
+
+  function createParticle() {
+    const depth = 0.3 + Math.random() * 0.7 /* 0.3 = far, 1.0 = near */
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.35 * depth,
+      vy: (Math.random() - 0.5) * 0.25 * depth,
+      r: (1.5 + Math.random() * 2.5) * depth,
+      depth,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: 0.008 + Math.random() * 0.015,
+    }
+  }
+
+  function createOrb() {
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.15,
+      vy: (Math.random() - 0.5) * 0.12,
+      r: 40 + Math.random() * 80,
+      hue: Math.random() < 0.7 ? 174 : 42, /* teal or gold */
+      alpha: 0.04 + Math.random() * 0.05,
+    }
+  }
+
+  function init() {
+    resize()
+    particles = Array.from({ length: PARTICLE_COUNT }, createParticle)
+    orbs = Array.from({ length: ORB_COUNT }, createOrb)
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height)
+
+    /* Background orbs (soft glow circles) */
+    for (const o of orbs) {
+      o.x += o.vx
+      o.y += o.vy
+      if (o.x < -o.r) o.x = width + o.r
+      if (o.x > width + o.r) o.x = -o.r
+      if (o.y < -o.r) o.y = height + o.r
+      if (o.y > height + o.r) o.y = -o.r
+
+      const grad = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r)
+      grad.addColorStop(0, `hsla(${o.hue},72%,52%,${o.alpha})`)
+      grad.addColorStop(1, `hsla(${o.hue},72%,52%,0)`)
+      ctx.fillStyle = grad
+      ctx.beginPath()
+      ctx.arc(o.x, o.y, o.r, 0, Math.PI * 2)
+      ctx.fill()
+    }
+
+    /* Move particles */
+    for (const p of particles) {
+      p.x += p.vx
+      p.y += p.vy
+      p.pulse += p.pulseSpeed
+
+      /* Mouse interaction: gently push nearby particles */
+      const dx = p.x - MOUSE.x
+      const dy = p.y - MOUSE.y
+      const distMouse = Math.sqrt(dx * dx + dy * dy)
+      if (distMouse < MOUSE_RADIUS && distMouse > 0) {
+        const force = (1 - distMouse / MOUSE_RADIUS) * 0.6 * p.depth
+        p.vx += (dx / distMouse) * force
+        p.vy += (dy / distMouse) * force
+      }
+
+      /* Dampen velocity */
+      p.vx *= 0.998
+      p.vy *= 0.998
+
+      /* Wrap around edges */
+      if (p.x < -20) p.x = width + 20
+      if (p.x > width + 20) p.x = -20
+      if (p.y < -20) p.y = height + 20
+      if (p.y > height + 20) p.y = -20
+    }
+
+    /* Draw connections */
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i]
+        const b = particles[j]
+        const dx = a.x - b.x
+        const dy = a.y - b.y
+        const dist = Math.sqrt(dx * dx + dy * dy)
+        const threshold = CONNECT_DIST * ((a.depth + b.depth) / 2)
+        if (dist < threshold) {
+          const alpha = (1 - dist / threshold) * 0.18 * ((a.depth + b.depth) / 2)
+          ctx.strokeStyle = `rgba(15,157,146,${alpha})`
+          ctx.lineWidth = 0.6 * ((a.depth + b.depth) / 2)
+          ctx.beginPath()
+          ctx.moveTo(a.x, a.y)
+          ctx.lineTo(b.x, b.y)
+          ctx.stroke()
+        }
+      }
+    }
+
+    /* Draw particles */
+    for (const p of particles) {
+      const pulseScale = 1 + Math.sin(p.pulse) * 0.25
+      const r = p.r * pulseScale
+
+      /* Outer glow */
+      ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${0.08 * p.depth})`)
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, r * 3, 0, Math.PI * 2)
+      ctx.fill()
+
+      /* Core dot */
+      ctx.fillStyle = p.color
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, r, 0, Math.PI * 2)
+      ctx.fill()
+    }
+
+    animId = requestAnimationFrame(draw)
+  }
+
+  /* Mouse tracking */
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect()
+    MOUSE.x = e.clientX - rect.left
+    MOUSE.y = e.clientY - rect.top
+  })
+  container.addEventListener('mouseleave', () => {
+    MOUSE.x = -9999
+    MOUSE.y = -9999
+  })
+
+  /* Visibility: pause when off-screen */
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      if (!animId) animId = requestAnimationFrame(draw)
+    } else {
+      cancelAnimationFrame(animId)
+      animId = null
+    }
+  }, { threshold: 0 })
+  observer.observe(container)
+
+  window.addEventListener('resize', () => {
+    resize()
+  })
+
+  init()
+  animId = requestAnimationFrame(draw)
+}
+
 const CONSULTATION_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzdjpnbk'
 
 export async function submitFormspree(formElement, extraFields = {}) {
