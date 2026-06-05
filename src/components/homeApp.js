@@ -719,6 +719,9 @@ function renderMainLayout(content) {
     <div class="consultation-modal" data-modal="consultation" hidden role="dialog" aria-modal="true" aria-label="Book a consultation">
       <div class="consultation-modal-panel">
         <button class="icon-button close-btn modal-close" data-close-consultation aria-label="Close consultation form">${icon('close')}</button>
+        <div class="consultation-video-banner">
+          <video src="/assets/videos/consultation-modal.mp4" autoplay loop muted playsinline class="modal-video consultation-hero-video"></video>
+        </div>
         <div class="modal-header">
           <span class="modal-icon">${icon('calendar')}</span>
           <h2>Book a Consultation</h2>
@@ -885,7 +888,7 @@ export function mountHomeApp(root, content) {
       <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon('close')}</button>
       <div class="modal-product-layout">
         <div class="modal-product-media">
-          <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="modal-product-image" />
+          <video src="/assets/videos/supplements-modal.mp4" autoplay loop muted playsinline class="modal-product-image modal-video" poster="${escapeHtml(product.image)}"></video>
         </div>
         <div class="modal-body modal-product-body">
           <span class="modal-card-eyebrow">Supplement detail</span>
@@ -921,7 +924,7 @@ export function mountHomeApp(root, content) {
     return `
       <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon('close')}</button>
       <div class="modal-media-wrap">
-        <img src="${escapeHtml(program.image)}" alt="${escapeHtml(program.title)}" class="modal-hero" />
+        <video src="/assets/videos/protocols-modal.mp4" autoplay loop muted playsinline class="modal-hero modal-video" poster="${escapeHtml(program.image)}"></video>
         <span class="pill-tag">${escapeHtml(program.badge)}</span>
       </div>
       <div class="modal-body modal-body--detail">
