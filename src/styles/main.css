@@ -451,6 +451,11 @@ input {
   opacity: 0.55;
 }
 
+.hero-particles-canvas {
+  opacity: 1;
+  object-fit: unset;
+}
+
 .hero-section::before {
   content: '';
   position: absolute;
