@@ -17,6 +17,7 @@ import {
   scrollLock,
   setupFloatingTelegramButton,
   setupFloatingWhatsAppButton,
+  setupHeroParticles,
   setupRevealTransitions,
   setupVapiWidget,
   submitConsultationRequest,
@@ -368,7 +369,7 @@ function renderMainLayout(content) {
 
       <main id="top">
         <section class="hero-section section-panel content-shell" id="home">
-          <img src="${escapeHtml(hero.backgroundImage)}" alt="Abstract precision oncology background" class="hero-bg" />
+          <div class="hero-bg hero-particles-placeholder" aria-hidden="true"></div>
           <div class="hero-overlay" aria-hidden="true"></div>
           <div class="hero-content">
             <span class="section-pill">${escapeHtml(hero.badge)}</span>
@@ -791,6 +792,7 @@ export function mountHomeApp(root, content) {
   root.innerHTML = renderMainLayout(content)
 
   setupRevealTransitions(root)
+  setupHeroParticles(root.querySelector('#home'))
   setupFloatingTelegramButton(content.contact)
   setupFloatingWhatsAppButton('12495763746')
   setupVapiWidget()
