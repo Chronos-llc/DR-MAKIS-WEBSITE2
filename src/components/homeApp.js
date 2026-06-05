@@ -572,6 +572,7 @@ function renderMainLayout(content) {
             <p>${icon('telegram')} <a href="${escapeHtml(contact.telegramUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(
     contact.telegramHandle
   )}</a></p>
+            <p>${icon('whatsapp')} <a href="https://wa.me/12495763746" target="_blank" rel="noopener noreferrer">+1 (249) 576-3746</a></p>
             <p>${icon('mail')} <a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a></p>
           </article>
         </section>
@@ -663,6 +664,7 @@ function renderMainLayout(content) {
               <li>${icon('telegram')} <a href="${escapeHtml(contact.telegramUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(
     contact.telegramHandle
   )}</a></li>
+              <li>${icon('whatsapp')} <a href="https://wa.me/12495763746" target="_blank" rel="noopener noreferrer">+1 (249) 576-3746</a></li>
               <li>${icon('mail')} <a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a></li>
             </ul>
           </div>
