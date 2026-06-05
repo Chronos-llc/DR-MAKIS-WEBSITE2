@@ -5337,7 +5337,7 @@ body {
   }
 
   .hero-overlay {
-    background: linear-gradient(90deg, rgba(248, 253, 252, 0.96), rgba(248, 253, 252, 0.76));
+    background: linear-gradient(90deg, rgba(4, 14, 26, 0.7), rgba(4, 14, 26, 0.3));
   }
 
   #home .hero-content h1 {
