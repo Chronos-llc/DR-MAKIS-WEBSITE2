@@ -422,7 +422,7 @@ function productModalTemplate(product) {
     <button class="icon-button close-btn modal-close" data-close-modal aria-label="Close details">${icon('close')}</button>
     <div class="modal-product-layout">
       <div class="modal-product-media">
-        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="modal-product-image" />
+        <video src="/assets/videos/supplements-modal.mp4" autoplay loop muted playsinline class="modal-product-image modal-video" poster="${escapeHtml(product.image)}"></video>
       </div>
       <div class="modal-body modal-product-body">
         <span class="modal-card-eyebrow">Supplement detail</span>
