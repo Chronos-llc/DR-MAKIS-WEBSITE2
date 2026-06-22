@@ -685,6 +685,7 @@ input {
 #home .hero-metrics .metric-value {
   margin-top: 14px;
   font-size: clamp(2.2rem, 4vw, 3.1rem);
+  color: #ffffff;
 }
 
 #home .hero-metrics .metric-label {
@@ -708,14 +709,18 @@ input {
 
 #home .hero-profile-card h3 {
   font-size: clamp(1.55rem, 2.8vw, 2rem);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 #home .hero-profile-role {
   font-size: 1.03rem;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 #home .hero-profile-highlight {
   font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
 }
 
 .category-grid,
