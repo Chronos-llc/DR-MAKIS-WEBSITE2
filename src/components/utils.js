@@ -84,7 +84,7 @@ export function setupHeroParticles(container) {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(W, H)
-    renderer.setClearColor(0x020a14, 1)
+    renderer.setClearColor(0x0a0504, 1)
     const canvas = renderer.domElement
     canvas.className = 'hero-bg hero-particles-canvas'
     canvas.setAttribute('aria-hidden', 'true')
@@ -97,13 +97,13 @@ export function setupHeroParticles(container) {
     camera.position.set(0, 0, 30)
 
     /* ── Palette ── */
-    const EMERALD = new THREE.Color(0x00c896)
-    const AZURE = new THREE.Color(0x0099ff)
+    const COPPER = new THREE.Color(0xc06830)
+    const GOLD = new THREE.Color(0xe8a838)
     const CORAL = new THREE.Color(0xff6b6b)
     const AMBER = new THREE.Color(0xffb347)
     const WHITE = new THREE.Color(0xffffff)
-    const TEAL = new THREE.Color(0x0f9d92)
-    const PALETTE = [EMERALD, AZURE, CORAL, AMBER, WHITE, TEAL, EMERALD, AZURE]
+    const SIENNA = new THREE.Color(0xa0522d)
+    const PALETTE = [COPPER, GOLD, CORAL, AMBER, WHITE, SIENNA, COPPER, GOLD]
 
     /* ── Background gradient shader ── */
     const bgGeo = new THREE.PlaneGeometry(120, 80)
@@ -120,9 +120,9 @@ export function setupHeroParticles(container) {
         uniform float uTime;
         varying vec2 vUv;
         void main() {
-          vec3 deep = vec3(0.008, 0.04, 0.08);
-          vec3 navy = vec3(0.02, 0.06, 0.14);
-          vec3 emerald = vec3(0.0, 0.08, 0.06);
+          vec3 deep = vec3(0.04, 0.02, 0.01);
+          vec3 navy = vec3(0.08, 0.04, 0.02);
+          vec3 emerald = vec3(0.06, 0.03, 0.01);
           float wave = sin(uTime * 0.12 + vUv.x * 4.0 + vUv.y * 2.0) * 0.5 + 0.5;
           float wave2 = cos(uTime * 0.08 + vUv.y * 3.0) * 0.5 + 0.5;
           vec3 col = mix(deep, mix(navy, emerald, wave * 0.6), vUv.y * 0.7 + wave2 * 0.3);
@@ -176,7 +176,7 @@ export function setupHeroParticles(container) {
     const HEX_COLS = 12
     const HEX_SIZE = 2.2
     const hexEdgeMat = new THREE.LineBasicMaterial({
-      color: EMERALD,
+      color: COPPER,
       transparent: true,
       opacity: 0.18,
       blending: THREE.AdditiveBlending,
@@ -295,7 +295,7 @@ export function setupHeroParticles(container) {
     for (let i = 0; i < RING_COUNT; i++) {
       const ringGeo = new THREE.RingGeometry(2.5 + i * 0.8, 2.7 + i * 0.8, 64)
       const ringMat = new THREE.MeshBasicMaterial({
-        color: i % 2 === 0 ? EMERALD : AZURE,
+        color: i % 2 === 0 ? COPPER : GOLD,
         transparent: true,
         opacity: 0.06,
         blending: THREE.AdditiveBlending,
@@ -332,7 +332,7 @@ export function setupHeroParticles(container) {
       const curve = new THREE.CatmullRomCurve3(curvePoints)
       const tubeGeo = new THREE.TubeGeometry(curve, 64, 0.04, 6, false)
       const tubeMat = new THREE.MeshBasicMaterial({
-        color: s === 0 ? EMERALD : s === 1 ? AZURE : AMBER,
+        color: s === 0 ? COPPER : s === 1 ? GOLD : AMBER,
         transparent: true,
         opacity: 0.25,
         blending: THREE.AdditiveBlending,
@@ -364,11 +364,11 @@ export function setupHeroParticles(container) {
     /* ── Large volumetric orbs ── */
     const orbGroup = new THREE.Group()
     const orbData = [
-      { pos: [-14, 9, -12], color: EMERALD, size: 5, alpha: 0.07 },
+      { pos: [-14, 9, -12], color: COPPER, size: 5, alpha: 0.07 },
       { pos: [16, -6, -10], color: CORAL, size: 4, alpha: 0.05 },
-      { pos: [-7, -11, -14], color: AZURE, size: 6, alpha: 0.06 },
+      { pos: [-7, -11, -14], color: GOLD, size: 6, alpha: 0.06 },
       { pos: [12, 10, -8], color: AMBER, size: 3.5, alpha: 0.05 },
-      { pos: [0, 2, -16], color: EMERALD, size: 7, alpha: 0.05 },
+      { pos: [0, 2, -16], color: COPPER, size: 7, alpha: 0.05 },
     ]
     orbData.forEach((o) => {
       const mat = new THREE.SpriteMaterial({
