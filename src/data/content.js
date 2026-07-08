@@ -541,50 +541,50 @@
       'Hear from patients who have experienced the Dr. William Makis difference in their cancer journey.',
     testimonials: [
       {
-        id: 'jennifer-martinez',
+        id: 'sophia-rossi',
         quote:
-          'The team at Dr. William Makis gave me hope when I needed it most. Their personalized approach to my treatment made all the difference in my recovery journey.',
-        name: 'Jennifer Martinez',
+          'Dr. Makis and his team restored my confidence in fighting this disease. The precision of their approach and genuine compassion changed everything for me.',
+        name: 'Sophia Rossi',
         role: 'Breast Cancer Survivor',
         avatar: 'https://i.postimg.cc/VvRT0wvF/Screenshot-20260304-215438-Chrome-Beta.jpg',
       },
       {
-        id: 'linda-davis',
+        id: 'elena-kowalski',
         quote:
-          'From diagnosis to treatment, every step was handled with such care and professionalism. The innovative therapies here truly saved my life.',
-        name: 'Linda Davis',
+          'Every visit felt like walking into a place that truly understood my battle. The innovative therapies and constant support gave me a future I was scared to hope for.',
+        name: 'Elena Kowalski',
         role: 'Lung Cancer Patient',
         avatar: 'https://i.postimg.cc/hjR3Cv7v/b865d335-b1f8-4c3a-bc6c-3583b094d29d.jpg',
       },
       {
-        id: 'leo-thompson',
+        id: 'james-okafor',
         quote:
-          'The support I received went beyond medical care. The whole team treated me like family and ensured I was comfortable throughout my treatment.',
-        name: 'Leo Thompson',
+          'What sets this team apart is how they treat the whole person, not just the disease. I felt heard, supported, and genuinely cared for every single day.',
+        name: 'James Okafor',
         role: 'Colorectal Cancer Survivor',
         avatar: 'https://i.postimg.cc/908bjQzL/501898ee-c038-4f21-96f5-a291205a0286.jpg',
       },
       {
-        id: 'michael-johnson',
+        id: 'robert-chen',
         quote:
-          'Dr. Makis and his team are exceptional. Their expertise and compassion made a difficult time much more manageable. Forever grateful.',
-        name: 'Michael Johnson',
+          'The level of expertise here is world-class. Dr. Makis took time to explain every option and made a frightening diagnosis feel manageable. Forever grateful.',
+        name: 'Robert Chen',
         role: 'Prostate Cancer Survivor',
         avatar: 'https://i.postimg.cc/VL299TtK/3c49ce89-9283-4389-a8aa-d0b54fe4213e.jpg',
       },
       {
-        id: 'david-goose',
+        id: 'marcus-bell',
         quote:
-          'The cutting-edge treatments and caring staff gave me a second chance at life. I cannot thank Dr. William Makis enough for their dedication.',
-        name: 'David Goose',
+          'When other doctors had given up, Dr. Makis found a path forward. The cutting-edge treatments and tireless dedication gave me a second chance at life.',
+        name: 'Marcus Bell',
         role: 'Lung Cancer Survivor',
         avatar: 'https://i.postimg.cc/sDG72cL2/32d2409e-3478-4b0f-be6a-4460af96d028.jpg',
       },
       {
-        id: 'mary-davies',
+        id: 'amara-hassan',
         quote:
-          'From my first consultation to my final treatment, the team was with me every step of the way. Their expertise and warmth made all the difference.',
-        name: 'Mary Davies',
+          'From my very first consultation, I knew I was in the right hands. The team walked beside me through every step with expertise and genuine warmth.',
+        name: 'Amara Hassan',
         role: 'Skin Cancer Survivor',
         avatar: 'https://i.postimg.cc/3JjmsZb0/Screenshot-20260304-221340-Chrome-Beta.jpg',
       },
