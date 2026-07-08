@@ -5423,24 +5423,27 @@ body {
 }
 
 #pediatric-waitlist .section-header p {
-  color: #c4b5a4;
+  color: #ddd2c5;
 }
 
 #pediatric-waitlist .form-group label {
-  color: #e0d5c8;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 #pediatric-waitlist .form-group input,
 #pediatric-waitlist .form-group select,
 #pediatric-waitlist .form-group textarea {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
   color: #fff;
+  font-size: 15px;
 }
 
 #pediatric-waitlist .form-group input::placeholder,
 #pediatric-waitlist .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 #pediatric-waitlist .form-group input:focus,
