@@ -64,9 +64,9 @@ export function toSlug(value) {
 }
 
 /**
- * 3D WebGL molecular hero scene using Three.js.
- * Dark gradient background with glowing molecular structures,
- * DNA helix, floating particles, and cinematic camera orbit.
+ * 3D WebGL cellular energy field hero using Three.js.
+ * Deep dark background with hexagonal cell membranes, pulsing
+ * energy rings, flowing light streams, and organic cell structures.
  */
 export function setupHeroParticles(container) {
   if (typeof document === 'undefined' || !container) return
@@ -84,7 +84,7 @@ export function setupHeroParticles(container) {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(W, H)
-    renderer.setClearColor(0x040e1a, 1)
+    renderer.setClearColor(0x020a14, 1)
     const canvas = renderer.domElement
     canvas.className = 'hero-bg hero-particles-canvas'
     canvas.setAttribute('aria-hidden', 'true')
@@ -94,22 +94,21 @@ export function setupHeroParticles(container) {
     /* ── Scene + Camera ── */
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000)
-    camera.position.set(0, 0, 28)
+    camera.position.set(0, 0, 30)
 
     /* ── Palette ── */
-    const TEAL = new THREE.Color(0x0f9d92)
-    const CYAN = new THREE.Color(0x00e5ff)
-    const MAGENTA = new THREE.Color(0xd946ef)
-    const GOLD = new THREE.Color(0xf4b321)
+    const EMERALD = new THREE.Color(0x00c896)
+    const AZURE = new THREE.Color(0x0099ff)
+    const CORAL = new THREE.Color(0xff6b6b)
+    const AMBER = new THREE.Color(0xffb347)
     const WHITE = new THREE.Color(0xffffff)
-    const PALETTE = [TEAL, CYAN, MAGENTA, GOLD, WHITE, TEAL, TEAL, CYAN]
+    const TEAL = new THREE.Color(0x0f9d92)
+    const PALETTE = [EMERALD, AZURE, CORAL, AMBER, WHITE, TEAL, EMERALD, AZURE]
 
-    /* ── Background gradient (subtle dark gradient mesh) ── */
+    /* ── Background gradient shader ── */
     const bgGeo = new THREE.PlaneGeometry(120, 80)
     const bgMat = new THREE.ShaderMaterial({
-      uniforms: {
-        uTime: { value: 0 },
-      },
+      uniforms: { uTime: { value: 0 } },
       vertexShader: `
         varying vec2 vUv;
         void main() {
@@ -121,11 +120,12 @@ export function setupHeroParticles(container) {
         uniform float uTime;
         varying vec2 vUv;
         void main() {
-          vec3 deep = vec3(0.016, 0.055, 0.102);
-          vec3 teal = vec3(0.024, 0.12, 0.16);
-          vec3 purple = vec3(0.08, 0.02, 0.14);
-          float t = sin(uTime * 0.15 + vUv.x * 3.0) * 0.5 + 0.5;
-          vec3 col = mix(deep, mix(teal, purple, vUv.x + sin(uTime * 0.1) * 0.15), vUv.y * 0.8 + t * 0.2);
+          vec3 deep = vec3(0.008, 0.04, 0.08);
+          vec3 navy = vec3(0.02, 0.06, 0.14);
+          vec3 emerald = vec3(0.0, 0.08, 0.06);
+          float wave = sin(uTime * 0.12 + vUv.x * 4.0 + vUv.y * 2.0) * 0.5 + 0.5;
+          float wave2 = cos(uTime * 0.08 + vUv.y * 3.0) * 0.5 + 0.5;
+          vec3 col = mix(deep, mix(navy, emerald, wave * 0.6), vUv.y * 0.7 + wave2 * 0.3);
           gl_FragColor = vec4(col, 1.0);
         }
       `,
@@ -151,9 +151,62 @@ export function setupHeroParticles(container) {
     }
     const glowTex = createGlowTexture(128)
 
-    /* ── Molecular nodes ── */
-    const NODE_COUNT = 180
-    const SPREAD = 30
+    /* ── Ring texture for energy rings ── */
+    function createRingTexture(size) {
+      const c = document.createElement('canvas')
+      c.width = c.height = size
+      const ctx = c.getContext('2d')
+      ctx.strokeStyle = 'rgba(255,255,255,0.8)'
+      ctx.lineWidth = size * 0.03
+      ctx.beginPath()
+      ctx.arc(size / 2, size / 2, size * 0.35, 0, Math.PI * 2)
+      ctx.stroke()
+      ctx.strokeStyle = 'rgba(255,255,255,0.3)'
+      ctx.lineWidth = size * 0.06
+      ctx.beginPath()
+      ctx.arc(size / 2, size / 2, size * 0.35, 0, Math.PI * 2)
+      ctx.stroke()
+      return new THREE.CanvasTexture(c)
+    }
+    const ringTex = createRingTexture(256)
+
+    /* ── Hexagonal cell membrane grid ── */
+    const hexGroup = new THREE.Group()
+    const HEX_ROWS = 8
+    const HEX_COLS = 12
+    const HEX_SIZE = 2.2
+    const hexEdgeMat = new THREE.LineBasicMaterial({
+      color: EMERALD,
+      transparent: true,
+      opacity: 0.18,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    })
+
+    for (let row = 0; row < HEX_ROWS; row++) {
+      for (let col = 0; col < HEX_COLS; col++) {
+        const xOff = col * HEX_SIZE * 1.75 - (HEX_COLS * HEX_SIZE * 1.75) / 2
+        const yOff = row * HEX_SIZE * 1.52 - (HEX_ROWS * HEX_SIZE * 1.52) / 2 + (col % 2 === 0 ? 0 : HEX_SIZE * 0.76)
+        const pts = []
+        for (let a = 0; a < 7; a++) {
+          const angle = (Math.PI / 3) * a - Math.PI / 6
+          pts.push(new THREE.Vector3(
+            xOff + Math.cos(angle) * HEX_SIZE,
+            yOff + Math.sin(angle) * HEX_SIZE,
+            -15 + (Math.random() - 0.5) * 3
+          ))
+        }
+        const hexLineGeo = new THREE.BufferGeometry().setFromPoints(pts)
+        const hexLine = new THREE.Line(hexLineGeo, hexEdgeMat.clone())
+        hexLine.userData = { baseOpacity: 0.08 + Math.random() * 0.12, phase: Math.random() * Math.PI * 2 }
+        hexGroup.add(hexLine)
+      }
+    }
+    scene.add(hexGroup)
+
+    /* ── Cellular nodes (floating bright particles) ── */
+    const NODE_COUNT = 200
+    const SPREAD = 32
     const nodePositions = []
     const nodeColors = []
     const nodeSizes = []
@@ -162,15 +215,15 @@ export function setupHeroParticles(container) {
     for (let i = 0; i < NODE_COUNT; i++) {
       const x = (Math.random() - 0.5) * SPREAD * 2
       const y = (Math.random() - 0.5) * SPREAD * 1.2
-      const z = (Math.random() - 0.5) * SPREAD * 0.8
+      const z = (Math.random() - 0.5) * SPREAD * 0.6
       nodePositions.push(x, y, z)
       const c = PALETTE[Math.floor(Math.random() * PALETTE.length)]
       nodeColors.push(c.r, c.g, c.b)
-      nodeSizes.push(0.12 + Math.random() * 0.25)
+      nodeSizes.push(0.1 + Math.random() * 0.22)
       nodeVelocities.push(
-        (Math.random() - 0.5) * 0.008,
-        (Math.random() - 0.5) * 0.006,
-        (Math.random() - 0.5) * 0.004,
+        (Math.random() - 0.5) * 0.007,
+        (Math.random() - 0.5) * 0.005,
+        (Math.random() - 0.5) * 0.003,
       )
     }
 
@@ -194,7 +247,7 @@ export function setupHeroParticles(container) {
         uniform float uScale;
         void main() {
           vColor = color;
-          float pulse = 0.8 + 0.4 * sin(uTime * 1.5 + position.x * 2.0 + position.y * 1.5);
+          float pulse = 0.7 + 0.5 * sin(uTime * 1.2 + position.x * 1.8 + position.y * 1.3);
           vAlpha = pulse;
           vec4 mvPos = modelViewMatrix * vec4(position, 1.0);
           gl_PointSize = size * uScale * pulse / -mvPos.z;
@@ -207,7 +260,7 @@ export function setupHeroParticles(container) {
         varying float vAlpha;
         void main() {
           vec4 tex = texture2D(uTexture, gl_PointCoord);
-          gl_FragColor = vec4(vColor * 1.6, tex.a * vAlpha * 0.9);
+          gl_FragColor = vec4(vColor * 1.5, tex.a * vAlpha * 0.85);
         }
       `,
       transparent: true,
@@ -218,8 +271,8 @@ export function setupHeroParticles(container) {
     scene.add(nodePoints)
 
     /* ── Connection lines ── */
-    const CONNECT_DIST = 5.5
-    const MAX_LINES = 600
+    const CONNECT_DIST = 5.0
+    const MAX_LINES = 500
     const linePositions = new Float32Array(MAX_LINES * 6)
     const lineColors = new Float32Array(MAX_LINES * 6)
     const lineGeo = new THREE.BufferGeometry()
@@ -229,79 +282,93 @@ export function setupHeroParticles(container) {
     const lineMat = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.3,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     })
-    const lines = new THREE.LineSegments(lineGeo, lineMat)
-    scene.add(lines)
+    const connectionLines = new THREE.LineSegments(lineGeo, lineMat)
+    scene.add(connectionLines)
 
-    /* ── DNA double helix ── */
-    const helixGroup = new THREE.Group()
-    const HELIX_NODES = 40
-    const HELIX_RADIUS = 3.5
-    const HELIX_PITCH = 0.7
-    const helixMat = new THREE.MeshBasicMaterial({
-      color: TEAL,
-      transparent: true,
-      opacity: 0.7,
-      blending: THREE.AdditiveBlending,
-    })
-    const helixMat2 = new THREE.MeshBasicMaterial({
-      color: CYAN,
-      transparent: true,
-      opacity: 0.7,
-      blending: THREE.AdditiveBlending,
-    })
-    const sphereGeo = new THREE.SphereGeometry(0.12, 8, 8)
-    const bondGeo = new THREE.CylinderGeometry(0.02, 0.02, 1, 4)
+    /* ── Pulsing energy rings ── */
+    const ringGroup = new THREE.Group()
+    const RING_COUNT = 6
+    for (let i = 0; i < RING_COUNT; i++) {
+      const ringGeo = new THREE.RingGeometry(2.5 + i * 0.8, 2.7 + i * 0.8, 64)
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: i % 2 === 0 ? EMERALD : AZURE,
+        transparent: true,
+        opacity: 0.06,
+        blending: THREE.AdditiveBlending,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      })
+      const ring = new THREE.Mesh(ringGeo, ringMat)
+      ring.position.set(-10 + Math.random() * 20, -6 + Math.random() * 12, -8 - Math.random() * 10)
+      ring.rotation.x = Math.random() * Math.PI
+      ring.rotation.y = Math.random() * Math.PI
+      ring.userData = {
+        baseScale: 0.8 + Math.random() * 0.6,
+        speed: 0.3 + Math.random() * 0.5,
+        phase: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.3,
+      }
+      ringGroup.add(ring)
+    }
+    scene.add(ringGroup)
 
-    for (let i = 0; i < HELIX_NODES; i++) {
-      const t = (i / HELIX_NODES) * Math.PI * 6
-      const y = (i / HELIX_NODES - 0.5) * HELIX_NODES * HELIX_PITCH
-      const x1 = Math.cos(t) * HELIX_RADIUS
-      const z1 = Math.sin(t) * HELIX_RADIUS
-      const x2 = Math.cos(t + Math.PI) * HELIX_RADIUS
-      const z2 = Math.sin(t + Math.PI) * HELIX_RADIUS
+    /* ── Flowing energy stream (curved tube) ── */
+    const streamGroup = new THREE.Group()
+    for (let s = 0; s < 3; s++) {
+      const curvePoints = []
+      const yBase = -12 + s * 12
+      for (let i = 0; i <= 20; i++) {
+        const t = i / 20
+        curvePoints.push(new THREE.Vector3(
+          -35 + t * 70,
+          yBase + Math.sin(t * Math.PI * 3 + s) * 4,
+          -10 + Math.sin(t * Math.PI * 2) * 3
+        ))
+      }
+      const curve = new THREE.CatmullRomCurve3(curvePoints)
+      const tubeGeo = new THREE.TubeGeometry(curve, 64, 0.04, 6, false)
+      const tubeMat = new THREE.MeshBasicMaterial({
+        color: s === 0 ? EMERALD : s === 1 ? AZURE : AMBER,
+        transparent: true,
+        opacity: 0.25,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      })
+      const tube = new THREE.Mesh(tubeGeo, tubeMat)
+      tube.userData = { curve: curve, color: tubeMat.color.clone() }
+      streamGroup.add(tube)
 
-      const s1 = new THREE.Mesh(sphereGeo, helixMat)
-      s1.position.set(x1, y, z1)
-      helixGroup.add(s1)
-
-      const s2 = new THREE.Mesh(sphereGeo, helixMat2)
-      s2.position.set(x2, y, z2)
-      helixGroup.add(s2)
-
-      /* Connecting bond */
-      if (i % 3 === 0) {
-        const bond = new THREE.Mesh(bondGeo, new THREE.MeshBasicMaterial({
-          color: GOLD,
+      /* Light particles flowing along the stream */
+      const STREAM_PARTICLES = 12
+      for (let p = 0; p < STREAM_PARTICLES; p++) {
+        const spriteMat = new THREE.SpriteMaterial({
+          map: glowTex,
+          color: tubeMat.color,
           transparent: true,
-          opacity: 0.4,
+          opacity: 0.6,
           blending: THREE.AdditiveBlending,
-        }))
-        const mx = (x1 + x2) / 2
-        const mz = (z1 + z2) / 2
-        const dist = Math.sqrt((x2 - x1) ** 2 + (z2 - z1) ** 2)
-        bond.scale.set(1, dist, 1)
-        bond.position.set(mx, y, mz)
-        bond.lookAt(x2, y, z2)
-        bond.rotateX(Math.PI / 2)
-        helixGroup.add(bond)
+          depthWrite: false,
+        })
+        const sprite = new THREE.Sprite(spriteMat)
+        sprite.scale.set(1.2, 1.2, 1)
+        sprite.userData = { curve: curve, offset: p / STREAM_PARTICLES, speed: 0.06 + Math.random() * 0.03 }
+        streamGroup.add(sprite)
       }
     }
-    helixGroup.position.set(12, 0, -5)
-    helixGroup.rotation.z = 0.3
-    scene.add(helixGroup)
+    scene.add(streamGroup)
 
     /* ── Large volumetric orbs ── */
     const orbGroup = new THREE.Group()
     const orbData = [
-      { pos: [-15, 8, -10], color: TEAL, size: 6, alpha: 0.08 },
-      { pos: [18, -5, -8], color: MAGENTA, size: 5, alpha: 0.06 },
-      { pos: [-8, -10, -12], color: CYAN, size: 7, alpha: 0.07 },
-      { pos: [10, 12, -6], color: GOLD, size: 4, alpha: 0.05 },
-      { pos: [0, 0, -15], color: TEAL, size: 8, alpha: 0.06 },
+      { pos: [-14, 9, -12], color: EMERALD, size: 5, alpha: 0.07 },
+      { pos: [16, -6, -10], color: CORAL, size: 4, alpha: 0.05 },
+      { pos: [-7, -11, -14], color: AZURE, size: 6, alpha: 0.06 },
+      { pos: [12, 10, -8], color: AMBER, size: 3.5, alpha: 0.05 },
+      { pos: [0, 2, -16], color: EMERALD, size: 7, alpha: 0.05 },
     ]
     orbData.forEach((o) => {
       const mat = new THREE.SpriteMaterial({
@@ -315,13 +382,13 @@ export function setupHeroParticles(container) {
       const sprite = new THREE.Sprite(mat)
       sprite.position.set(...o.pos)
       sprite.scale.set(o.size * 6, o.size * 6, 1)
-      sprite.userData = { baseY: o.pos[1], speed: 0.2 + Math.random() * 0.3 }
+      sprite.userData = { baseY: o.pos[1], speed: 0.15 + Math.random() * 0.25 }
       orbGroup.add(sprite)
     })
     scene.add(orbGroup)
 
     /* ── Ambient dust particles ── */
-    const DUST_COUNT = 500
+    const DUST_COUNT = 600
     const dustPositions = new Float32Array(DUST_COUNT * 3)
     const dustColors = new Float32Array(DUST_COUNT * 3)
     for (let i = 0; i < DUST_COUNT; i++) {
@@ -337,10 +404,10 @@ export function setupHeroParticles(container) {
     dustGeo.setAttribute('position', new THREE.Float32BufferAttribute(dustPositions, 3))
     dustGeo.setAttribute('color', new THREE.Float32BufferAttribute(dustColors, 3))
     const dustMat = new THREE.PointsMaterial({
-      size: 0.08,
+      size: 0.07,
       vertexColors: true,
       transparent: true,
-      opacity: 0.6,
+      opacity: 0.55,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
       map: glowTex,
@@ -391,18 +458,17 @@ export function setupHeroParticles(container) {
       animId = requestAnimationFrame(animate)
       const t = clock.getElapsedTime()
 
-      /* Camera orbit */
-      camera.position.x = Math.sin(t * 0.12) * 6
-      camera.position.y = Math.cos(t * 0.08) * 3
+      /* Camera gentle orbit */
+      camera.position.x = Math.sin(t * 0.1) * 5
+      camera.position.y = Math.cos(t * 0.07) * 2.5
       camera.lookAt(0, 0, 0)
 
-      /* Move nodes */
+      /* Move cellular nodes */
       const pos = nodeGeo.attributes.position.array
       for (let i = 0; i < NODE_COUNT; i++) {
-        pos[i * 3] += nodeVelocities[i * 3] + Math.sin(t * 0.5 + i) * 0.002
-        pos[i * 3 + 1] += nodeVelocities[i * 3 + 1] + Math.cos(t * 0.4 + i * 0.7) * 0.002
+        pos[i * 3] += nodeVelocities[i * 3] + Math.sin(t * 0.4 + i * 0.8) * 0.002
+        pos[i * 3 + 1] += nodeVelocities[i * 3 + 1] + Math.cos(t * 0.35 + i * 0.6) * 0.002
         pos[i * 3 + 2] += nodeVelocities[i * 3 + 2]
-        /* Soft boundary bounce */
         for (let a = 0; a < 3; a++) {
           const limit = a === 1 ? SPREAD * 0.6 : SPREAD
           if (Math.abs(pos[i * 3 + a]) > limit) {
@@ -413,25 +479,48 @@ export function setupHeroParticles(container) {
       }
       nodeGeo.attributes.position.needsUpdate = true
 
-      /* Update connections every 3rd frame for perf */
+      /* Update connections every 3rd frame */
       if (Math.floor(t * 60) % 3 === 0) {
         updateConnections(pos)
       }
 
-      /* Rotate DNA helix */
-      helixGroup.rotation.y = t * 0.2
-      helixGroup.position.y = Math.sin(t * 0.3) * 2
+      /* Pulse hexagonal grid */
+      hexGroup.children.forEach((hex) => {
+        const pulse = 0.5 + 0.5 * Math.sin(t * hex.userData.phase + t * 0.8)
+        hex.material.opacity = hex.userData.baseOpacity * pulse
+      })
+
+      /* Rotate and pulse energy rings */
+      ringGroup.children.forEach((ring) => {
+        const ud = ring.userData
+        ring.rotation.x += ud.rotSpeed * 0.01
+        ring.rotation.z += ud.rotSpeed * 0.008
+        const pulse = ud.baseScale + Math.sin(t * ud.speed + ud.phase) * 0.3
+        ring.scale.set(pulse, pulse, pulse)
+        ring.material.opacity = 0.04 + Math.sin(t * ud.speed * 1.5 + ud.phase) * 0.04
+      })
+
+      /* Flow stream particles */
+      streamGroup.children.forEach((child) => {
+        if (child.isSprite && child.userData.curve) {
+          const ud = child.userData
+          ud.offset = (ud.offset + ud.speed * 0.008) % 1
+          const pt = ud.curve.getPoint(ud.offset)
+          child.position.copy(pt)
+          child.material.opacity = 0.4 + Math.sin(t * 3 + ud.offset * Math.PI * 2) * 0.3
+        }
+      })
 
       /* Float orbs */
       orbGroup.children.forEach((orb) => {
-        orb.position.y = orb.userData.baseY + Math.sin(t * orb.userData.speed) * 2
+        orb.position.y = orb.userData.baseY + Math.sin(t * orb.userData.speed) * 2.5
       })
 
-      /* Rotate dust slowly */
-      dust.rotation.y = t * 0.02
-      dust.rotation.x = Math.sin(t * 0.01) * 0.1
+      /* Rotate dust */
+      dust.rotation.y = t * 0.015
+      dust.rotation.x = Math.sin(t * 0.008) * 0.08
 
-      /* Background time */
+      /* Shader uniforms */
       bgMat.uniforms.uTime.value = t
       nodeMat.uniforms.uTime.value = t
 
@@ -572,7 +661,7 @@ export function setupRevealTransitions(root = document) {
 
 export function setupFloatingTelegramButton(contact = {}) {
   const telegramUrl = String(contact.telegramUrl || '').trim()
-  const telegramHandle = String(contact.telegramHandle || '@Consult_william_makis').trim()
+  const telegramHandle = String(contact.telegramHandle || '@makismediciner').trim()
 
   if (!telegramUrl || typeof document === 'undefined') return
 
