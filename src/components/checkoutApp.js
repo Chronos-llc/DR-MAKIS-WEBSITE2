@@ -54,7 +54,7 @@ function checkoutTemplate(content, cart, statusMessage = '') {
         <section class="section-panel checkout-panel content-shell">
           <h1>Checkout</h1>
 
-          <form class="checkout-form" id="checkout-form" action="https://formspree.io/f/xzdjpnbk" method="POST" novalidate>
+          <form class="checkout-form" id="checkout-form" action="https://formspree.io/f/xlgqdnnw" method="POST" novalidate>
             <article class="form-card">
               <h2>Customer Information</h2>
               <label>
