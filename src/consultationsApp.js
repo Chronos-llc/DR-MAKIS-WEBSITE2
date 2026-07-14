@@ -354,7 +354,7 @@ function renderConsultationsLayout(content) {
           <p class="modal-subtitle">Schedule a consultation with Dr. Makis to discuss your treatment options</p>
         </div>
 
-        <form class="consultation-form" data-consultation-form action="https://formspree.io/f/xzdjpnbk" method="POST">
+        <form class="consultation-form" data-consultation-form action="https://formspree.io/f/xlgqdnnw" method="POST">
           <div class="form-group">
             <label for="fullName">Full Name *</label>
             <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
