@@ -563,7 +563,7 @@ export function setupHeroParticles(container) {
   })
 }
 
-const CONSULTATION_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzdjpnbk'
+const CONSULTATION_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgqdnnw'
 
 export async function submitFormspree(formElement, extraFields = {}) {
   const formData = new FormData(formElement)
