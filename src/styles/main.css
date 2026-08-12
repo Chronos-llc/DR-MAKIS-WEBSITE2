@@ -5869,4 +5869,15 @@ body {
   }
 }
 
-/* canine section styles v2 */
+/* Specificity guards: .section-panel p overrides single-class canine rules */
+#canine-mrna .canine-price-label { font-size: 12px; color: #e8a838; }
+#canine-mrna .canine-price-value { font-size: 40px; color: #fff; }
+#canine-mrna .canine-price-scope { font-size: 14px; color: #ddd2c5; }
+#canine-mrna .canine-price-more { font-size: 14px; color: #c9bcae; }
+#canine-mrna .canine-form-intro { font-size: 15px; color: #cbbfb2; }
+#canine-mrna .canine-story-note { font-size: 15px; color: #e2d6c8; }
+#canine-mrna .canine-disclaimer { font-size: 13px; color: #a89a8c; }
+#canine-mrna .canine-steps p { font-size: 14px; color: #cbbfb2; }
+@media (max-width: 640px) {
+  #canine-mrna .canine-price-value { font-size: 32px; }
+}
