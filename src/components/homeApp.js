@@ -578,6 +578,161 @@ function renderMainLayout(content) {
           </article>
         </section>
 
+        <section class="section-panel content-shell canine-panel" id="canine-mrna">
+          <header class="section-header">
+            <p class="section-kicker">In partnership with Gamgee Technologies (YC S26)</p>
+            <h2>Personalised mRNA Cancer Vaccines &mdash; For Dogs</h2>
+            <p>
+              A vaccine designed from your dog&rsquo;s own tumour. We have partnered with Gamgee
+              Technologies to bring the world&rsquo;s first computationally designed canine mRNA
+              cancer vaccine to families outside Australia.
+            </p>
+          </header>
+
+          <div class="canine-story">
+            <figure class="canine-figure">
+              <img src="/assets/images/canine/canine-hero.webp" alt="A healthy Staffordshire bull terrier sitting in golden evening light" loading="lazy" />
+            </figure>
+            <div class="canine-story-copy">
+              <h3>It started with Rosie</h3>
+              <p>
+                Rosie is a Staffordshire bull terrier cross with mast cell cancer. Surgery, chemotherapy
+                and immunotherapy all failed, and her vets gave her months to live.
+              </p>
+              <p>
+                Her owner, Paul Conyngham, had no background in biology &mdash; but he did have a
+                background in AI and data. He used AI tools and genomic analysis to read Rosie&rsquo;s
+                tumour, identify the mutations driving it, and design a vaccine target list. Scientists
+                at the UNSW RNA Institute reviewed his work and manufactured what is believed to be the
+                first fully computationally designed mRNA cancer vaccine ever given to a dog.
+              </p>
+              <p>
+                After treatment, several of Rosie&rsquo;s tumours shrank significantly and her mobility
+                and quality of life returned. Paul is careful about what that means, and so are we:
+                <strong>this is not a cure.</strong> One tumour did not respond at all, and she received
+                other immunotherapy alongside the vaccine. What it did buy her was time, and good time.
+              </p>
+              <p class="canine-story-note">
+                That one-off effort is now Gamgee &mdash; a repeatable clinical system, backed by
+                Y&nbsp;Combinator, running trials in Australia and accepting cases globally.
+              </p>
+            </div>
+          </div>
+
+          <div class="canine-how">
+            <h3>How a personalised vaccine is made</h3>
+            <ol class="canine-steps">
+              <li>
+                <span class="canine-step-icon">${icon('microscope')}</span>
+                <h4>1. Sequence</h4>
+                <p>Your vet collects a tumour sample and a matched healthy sample. Both are sequenced.</p>
+              </li>
+              <li>
+                <span class="canine-step-icon">${icon('dna')}</span>
+                <h4>2. Identify</h4>
+                <p>AI and genomic analysis find the neoantigens unique to your dog&rsquo;s cancer.</p>
+              </li>
+              <li>
+                <span class="canine-step-icon">${icon('syringe')}</span>
+                <h4>3. Design &amp; build</h4>
+                <p>An mRNA vaccine encoding those targets is designed and manufactured for your dog alone.</p>
+              </li>
+              <li>
+                <span class="canine-step-icon">${icon('stethoscope')}</span>
+                <h4>4. Treat &amp; monitor</h4>
+                <p>A veterinary oncologist administers it and tracks the response over time.</p>
+              </li>
+            </ol>
+            <figure class="canine-figure canine-figure--wide">
+              <img src="/assets/images/canine/canine-mrna.webp" alt="An mRNA strand encased in a lipid nanoparticle" loading="lazy" />
+            </figure>
+          </div>
+
+          <ul class="canine-credibility">
+            <li>${icon('badge')} Y Combinator S26</li>
+            <li>${icon('microscope')} UNSW RNA Institute</li>
+            <li>${icon('clipboard')} Clinical trials in Australia</li>
+            <li>${icon('globe')} Accepting cases globally</li>
+          </ul>
+
+          <div class="canine-apply">
+            <div class="canine-price">
+              <p class="canine-price-label">Programme fee</p>
+              <p class="canine-price-value">$3,500</p>
+              <p class="canine-price-scope">
+                Covers tumour and germline sequencing, neoantigen analysis, vaccine design and
+                manufacture. Veterinary administration and monitoring are billed separately by your
+                own veterinary oncologist.
+              </p>
+              <p class="canine-price-more">
+                Learn more about the science at
+                <a href="https://gamgee.io" target="_blank" rel="noopener noreferrer">gamgee.io ${icon('externalLink')}</a>
+              </p>
+            </div>
+
+            <form class="canine-form consultation-form" data-consultation-form action="https://formspree.io/f/xlgqdnnw" method="POST">
+              <input type="hidden" name="_subject" value="Canine mRNA Vaccine Programme Application" />
+              <h3>Apply for assessment</h3>
+              <p class="canine-form-intro">
+                Not every cancer is a good fit. Tell us about your dog and we will come back with
+                whether a personalised vaccine is a realistic option for them.
+              </p>
+
+              <div class="form-group">
+                <label for="canineOwnerName">Your Name *</label>
+                <input type="text" id="canineOwnerName" name="ownerName" required placeholder="Enter your full name" />
+              </div>
+
+              <div class="form-group">
+                <label for="canineEmail">Email Address *</label>
+                <input type="email" id="canineEmail" name="email" required placeholder="Enter your email address" />
+              </div>
+
+              <div class="form-group">
+                <label for="caninePhone">Phone Number *</label>
+                <input type="tel" id="caninePhone" name="phone" required placeholder="Enter your phone number" />
+              </div>
+
+              <div class="form-group">
+                <label for="canineDogName">Dog&rsquo;s Name *</label>
+                <input type="text" id="canineDogName" name="dogName" required placeholder="Enter your dog&rsquo;s name" />
+              </div>
+
+              <div class="form-group">
+                <label for="canineBreedAge">Breed &amp; Age *</label>
+                <input type="text" id="canineBreedAge" name="breedAge" required placeholder="e.g. Labrador, 9 years" />
+              </div>
+
+              <div class="form-group">
+                <label for="canineDiagnosis">Diagnosis &amp; Treatment So Far *</label>
+                <textarea id="canineDiagnosis" name="diagnosis" rows="4" required placeholder="Cancer type, when it was diagnosed, and what treatment your dog has already had"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Apply for Assessment</button>
+              </div>
+
+              <p class="hipaa-note">${icon('shield')} Your information is submitted securely through Formspree.</p>
+            </form>
+          </div>
+
+          <figure class="canine-oncologist">
+            <img src="/assets/images/canine/canine-vet.webp" alt="A veterinary oncologist examining a dog in a clinic" loading="lazy" />
+            <figcaption>
+              Every vaccine is administered and monitored by a licensed veterinary oncologist &mdash;
+              never shipped to owners directly.
+            </figcaption>
+          </figure>
+
+          <p class="canine-disclaimer">
+            Personalised mRNA cancer vaccines for dogs are <strong>investigational</strong>. They are
+            not a licensed or approved veterinary medicine, and are provided under a research protocol
+            through a licensed veterinary oncologist. Outcomes vary between individual dogs and no
+            outcome is promised or guaranteed. Nothing here is a cure or a substitute for advice from
+            your own veterinarian.
+          </p>
+        </section>
+
         <section class="section-panel content-shell" id="pediatric-waitlist">
           <header class="section-header">
             <p class="section-kicker">Florida Cancer Center</p>
