@@ -5495,3 +5495,376 @@ body {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.5); opacity: 0.5; }
 }
+
+/* ═══ Fork site unique: Canine mRNA vaccine section (Gamgee partnership) ═══ */
+/* Sits directly above the waitlist and bridges the cream page body into the
+   dark waitlist block, so the two read as one dark unit at the page foot. */
+#canine-mrna {
+  background: linear-gradient(170deg, #3a2a20 0%, #2f2118 55%, #2a1f1a 100%);
+  border-radius: var(--radius-lg);
+  color: #e8ddd2;
+  padding: 52px 30px 44px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+#canine-mrna::before {
+  content: '';
+  position: absolute;
+  top: -140px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(232, 168, 56, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+#canine-mrna > * {
+  position: relative;
+  z-index: 1;
+}
+
+#canine-mrna .section-kicker {
+  color: #e8a838;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#canine-mrna .section-header h2 {
+  color: #fff;
+}
+
+#canine-mrna .section-header p {
+  color: #ddd2c5;
+}
+
+#canine-mrna h3 {
+  color: #fff;
+}
+
+/* ── Rosie story ── */
+.canine-story {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 30px;
+  align-items: start;
+  margin-top: 34px;
+}
+
+.canine-figure {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(232, 168, 56, 0.28);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.canine-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canine-figure--wide {
+  margin-top: 26px;
+  max-height: 260px;
+}
+
+.canine-story-copy p {
+  color: #ddd2c5;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+
+.canine-story-copy strong {
+  color: #ffc76b;
+}
+
+.canine-story-note {
+  border-left: 3px solid var(--primary);
+  padding-left: 14px;
+  color: #c9bcae !important;
+  font-style: italic;
+}
+
+/* ── How it works ── */
+.canine-how {
+  margin-top: 42px;
+}
+
+.canine-steps {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.canine-steps li {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+}
+
+.canine-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(192, 104, 48, 0.9), rgba(232, 168, 56, 0.85));
+  color: #2a1f1a;
+  margin-bottom: 12px;
+}
+
+.canine-step-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.canine-steps h4 {
+  color: #fff;
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.canine-steps p {
+  color: #c9bcae;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── Credibility strip ── */
+.canine-credibility {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 16px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.canine-credibility li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e8ddd2;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.canine-credibility svg {
+  width: 17px;
+  height: 17px;
+  color: #e8a838;
+}
+
+/* ── Price + application ── */
+.canine-apply {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 26px;
+  align-items: start;
+  margin-top: 38px;
+}
+
+.canine-price {
+  background: linear-gradient(160deg, rgba(192, 104, 48, 0.22), rgba(232, 168, 56, 0.08));
+  border: 1px solid rgba(232, 168, 56, 0.35);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+}
+
+.canine-price-label {
+  color: #e8a838;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.canine-price-value {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 0 14px;
+}
+
+.canine-price-scope {
+  color: #ddd2c5;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+.canine-price-more {
+  color: #c9bcae;
+  font-size: 14px;
+  margin: 0;
+}
+
+.canine-price-more a {
+  color: #ffc76b;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.canine-price-more a:hover {
+  text-decoration: underline;
+}
+
+.canine-price-more svg {
+  width: 14px;
+  height: 14px;
+}
+
+.canine-form {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+}
+
+.canine-form h3 {
+  margin: 0 0 8px;
+}
+
+.canine-form-intro {
+  color: #c9bcae;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+#canine-mrna .form-group label {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+#canine-mrna .form-group input,
+#canine-mrna .form-group select,
+#canine-mrna .form-group textarea {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 15px;
+}
+
+#canine-mrna .form-group input::placeholder,
+#canine-mrna .form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+#canine-mrna .form-group input:focus,
+#canine-mrna .form-group textarea:focus {
+  border-color: #e8a838;
+  box-shadow: 0 0 0 3px rgba(232, 168, 56, 0.2);
+}
+
+#canine-mrna .btn-primary {
+  background: linear-gradient(135deg, #c06830, #e8a838);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+#canine-mrna .hipaa-note {
+  color: #a89880;
+}
+
+/* ── Disclaimer ── */
+.canine-disclaimer {
+  margin: 32px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #a89880;
+  font-size: 12.5px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.canine-disclaimer strong {
+  color: #c9bcae;
+}
+
+@media (max-width: 900px) {
+  .canine-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .canine-story,
+  .canine-apply {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .canine-figure {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  #canine-mrna {
+    padding: 38px 18px 34px;
+  }
+
+  .canine-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .canine-price-value {
+    font-size: 34px;
+  }
+
+  .canine-price,
+  .canine-form {
+    padding: 22px 18px;
+  }
+}
+
+/* ── Veterinary oncologist band ── */
+.canine-oncologist {
+  margin: 34px 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.canine-oncologist img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: calc(var(--radius-md) - 6px);
+}
+
+.canine-oncologist figcaption {
+  color: #ddd2c5;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .canine-oncologist {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
