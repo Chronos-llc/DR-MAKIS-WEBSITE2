@@ -6,7 +6,7 @@
     tagline: 'Leading the way in advanced cancer diagnostics and personalized oncology care.',
   },
   contact: {
-    email: 'williammakis@makiscancerhope.life',
+    email: 'drmakis@zohomail.com',
     telegramHandle: '@makismediciner',
     telegramUrl: 'https://t.me/makismediciner',
     addressLines: ['Dr. William Makis Cancer Center', '1234 Medical Drive, Suite 500', 'Boston, MA 02115'],
